@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Orchid Hotels — Site Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orchid: #8E2A7B;
+    --orchid-light: #C85AA6;
+    --orchid-pale: #f7eef5;
+    --gold: #C9A84C;
+    --dark: #1a1018;
+    --text: #3a2535;
+    --muted: #8a7585;
+    --border: #e8d8e4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #faf6f9;
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  header {
+    background: var(--orchid);
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(142,42,123,0.18);
+  }
+  .logo-circle {
+    width: 44px; height: 44px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .header-text h1 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .header-text p {
+    color: rgba(255,255,255,0.72);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Main */
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px 48px;
+  }
+
+  .hotel-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 32px rgba(142,42,123,0.08), 0 1px 4px rgba(0,0,0,0.04);
+    width: 100%;
+    max-width: 480px;
+    overflow: hidden;
+  }
+
+  .hotel-banner {
+    background: linear-gradient(135deg, var(--orchid) 0%, #b03d9a 60%, #c85aa6 100%);
+    padding: 28px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hotel-banner::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .hotel-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; left: 40px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hotel-name {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .hotel-city {
+    color: rgba(255,255,255,0.78);
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hotel-city::before { content: '📍'; font-size: 12px; }
+
+  .hotel-body {
+    padding: 28px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  /* Action buttons */
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn:last-child { margin-bottom: 0; }
+  .btn:active { transform: scale(0.98); }
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .btn-text { flex: 1; text-align: left; }
+  .btn-title {
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    line-height: 1.3;
+  }
+  .btn-sub {
+    font-size: 12px;
+    font-weight: 300;
+    display: block;
+    margin-top: 2px;
+    opacity: 0.7;
+  }
+  .btn-arrow {
+    font-size: 18px;
+    opacity: 0.5;
+  }
+
+  /* Button styles */
+  .btn-form {
+    background: linear-gradient(135deg, #f0e6ee 0%, #f9f0f7 100%);
+    border: 1.5px solid #e0c8da;
+    color: var(--orchid);
+    box-shadow: 0 2px 8px rgba(142,42,123,0.08);
+  }
+  .btn-form:hover { box-shadow: 0 4px 16px rgba(142,42,123,0.15); }
+  .btn-form .btn-icon { background: rgba(142,42,123,0.12); }
+
+  .btn-ppt {
+    background: linear-gradient(135deg, #eef0f9 0%, #f4f5fc 100%);
+    border: 1.5px solid #c8cce8;
+    color: #2a3a8e;
+    box-shadow: 0 2px 8px rgba(42,58,142,0.08);
+  }
+  .btn-ppt:hover { box-shadow: 0 4px 16px rgba(42,58,142,0.15); }
+  .btn-ppt .btn-icon { background: rgba(42,58,142,0.10); }
+
+  .btn-schedule {
+    background: linear-gradient(135deg, #eef7f0 0%, #f4fbf5 100%);
+    border: 1.5px solid #c8e0cc;
+    color: #2a6e3a;
+    box-shadow: 0 2px 8px rgba(42,110,58,0.08);
+  }
+  .btn-schedule:hover { box-shadow: 0 4px 16px rgba(42,110,58,0.12); }
+  .btn-schedule .btn-icon { background: rgba(42,110,58,0.10); }
+
+  .btn-folder {
+    background: linear-gradient(135deg, #fdf5e8 0%, #fefaf2 100%);
+    border: 1.5px solid #e8d8b0;
+    color: #7a5a1a;
+    box-shadow: 0 2px 8px rgba(122,90,26,0.07);
+  }
+  .btn-folder:hover { box-shadow: 0 4px 16px rgba(122,90,26,0.12); }
+  .btn-folder .btn-icon { background: rgba(201,168,76,0.15); }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+  }
+
+  /* Error / Loading */
+  .state-box {
+    text-align: center;
+    padding: 48px 28px;
+  }
+  .state-icon { font-size: 48px; margin-bottom: 16px; }
+  .state-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--orchid);
+    margin-bottom: 8px;
+  }
+  .state-msg { color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* Disabled state for missing links */
+  .btn-disabled {
+    opacity: 0.45;
+    pointer-events: none;
+    filter: grayscale(0.4);
+  }
+  .coming-soon {
+    font-size: 9px;
+    background: #ffd;
+    border: 1px solid #ddc;
+    color: #775;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-circle">🌺</div>
+  <div class="header-text">
+    <h1>Royal Orchid Hotels</h1>
+    <p>Site Update Portal</p>
+  </div>
+</header>
+
+<main>
+  <div class="hotel-card" id="card">
+    <div class="state-box" id="loading">
+      <div class="state-icon">⏳</div>
+      <div class="state-title">Loading…</div>
+      <div class="state-msg">Fetching hotel details</div>
+    </div>
+  </div>
+</main>
+
+<footer>Royal Orchid Hotels Limited &nbsp;·&nbsp; Architecture & Projects Division</footer>
+
+<script>
+// ── HOTEL DATA ─────────────────────────────────────────────────────────────
+// Auto-generated by generate_hotel_links.py
+// Format: [index, "Hotel Name", "City", "form_url", "ppt_url", "schedule_url", "folder_url"]
+const HOTELS = __HOTEL_JSON__;
+
+const BASE_FORM = "https://suchethannayakroyalorchidcom-star.github.io/royal-orchid-site-updates/?hotel=";
+
+function getParam(name) {
+  const u = new URLSearchParams(window.location.search);
+  return u.get(name);
+}
+
+function render(h) {
+  const formUrl = BASE_FORM + h.index;
+  const pptUrl = h.ppt_url || "";
+  const scheduleUrl = h.schedule_url || "";
+  const folderUrl = h.folder_url || "";
+
+  document.getElementById("card").innerHTML = `
+    <div class="hotel-banner">
+      <div class="hotel-name">${h.hotel}</div>
+      <div class="hotel-city">${h.city}</div>
+    </div>
+    <div class="hotel-body">
+      <div class="section-label">Quick Actions</div>
+
+      <a href="${formUrl}" class="btn btn-form" target="_blank">
+        <div class="btn-icon">📋</div>
+        <div class="btn-text">
+          <span class="btn-title">Submit / Edit Site Update</span>
+          <span class="btn-sub">Fill or update your latest site progress</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <a href="${pptUrl}" class="btn btn-ppt ${pptUrl ? '' : 'btn-disabled'}" target="_blank">
+        <div class="btn-icon">📊</div>
+        <div class="btn-text">
+          <span class="btn-title">View Presentation${pptUrl ? '' : '<span class=\'coming-soon\'>Pending</span>'}</span>
+          <span class="btn-sub">Latest site update report (PPT)</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <div class="divider"></div>
+      <div class="section-label">Project Files</div>
+
+      <a href="${scheduleUrl}" class="btn btn-schedule ${scheduleUrl ? '' : 'btn-disabled'}" target="_blank">
+        <div class="btn-icon">📅</div>
+        <div class="btn-text">
+          <span class="btn-title">Project Schedule${scheduleUrl ? '' : '<span class=\'coming-soon\'>Auto-generated after first update</span>'}</span>
+          <span class="btn-sub">Gantt chart & milestone tracker</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+
+    </div>
+  `;
+}
+
+function showError() {
+  document.getElementById("card").innerHTML = `
+    <div class="state-box">
+      <div class="state-icon">🔍</div>
+      <div class="state-title">Hotel Not Found</div>
+      <div class="state-msg">This link is invalid or the hotel has been removed.<br>Please contact the ROHL Architecture team.</div>
+    </div>
+  `;
+}
+
+// Init
+const idx = getParam("hotel");
+if (idx === null || idx === "") {
+  showError();
+} else {
+  const h = HOTELS.find(x => String(x.index) === String(idx));
+  h ? render(h) : showError();
+}
+</script>
+</body>
+</html>
