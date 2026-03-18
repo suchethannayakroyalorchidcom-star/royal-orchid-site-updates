@@ -695,15 +695,19 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
     <!-- Site Photos -->
     <div class="field">
       <label>Site Photos</label>
-      <div class="upload-box" id="photos-box"
-           ondragover="e.preventDefault();this.classList.add('drag-over')"
-           ondragleave="this.classList.remove('drag-over')"
-           ondrop="handleDrop(event,'photos')">
-        <input type="file" id="photos-input" multiple accept="image/*"
-               onchange="handleFiles('photos')">
-        <div class="upload-icon">📸</div>
-        <div class="upload-label">Tap to add site photos</div>
-        <div class="upload-hint">📷 Take photo or 🖼 choose from gallery · multiple</div>
+      <input type="file" id="photos-input" multiple accept="image/*" style="display:none" onchange="handleFiles('photos')">
+      <input type="file" id="photos-cam-input" multiple accept="image/*" capture="environment" style="display:none" onchange="handleFiles('photos')">
+      <div style="display:flex;gap:10px;margin-bottom:8px">
+        <label for="photos-cam-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #8E2A7B;border-radius:12px;cursor:pointer;background:#f9f0f7;color:#8E2A7B;font-family:inherit">
+          <span style="font-size:28px">📷</span>
+          <span style="font-size:13px;font-weight:500;margin-top:6px">Take Photo</span>
+          <span style="font-size:10px;opacity:0.7;margin-top:2px">Open Camera</span>
+        </label>
+        <label for="photos-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #C85AA6;border-radius:12px;cursor:pointer;background:#fdf5fb;color:#8E2A7B;font-family:inherit">
+          <span style="font-size:28px">🖼️</span>
+          <span style="font-size:13px;font-weight:500;margin-top:6px">Gallery</span>
+          <span style="font-size:10px;opacity:0.7;margin-top:2px">Choose Files</span>
+        </label>
       </div>
       <div class="preview-grid" id="photos-preview"></div>
     </div>
@@ -713,15 +717,19 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
     <!-- Rendered Image -->
     <div class="field">
       <label>Architectural Render / Design Image</label>
-      <div class="upload-box" id="render-box"
-           ondragover="e.preventDefault();this.classList.add('drag-over')"
-           ondragleave="this.classList.remove('drag-over')"
-           ondrop="handleDrop(event,'render')">
-        <input type="file" id="render-input" accept="image/*,application/pdf"
-               onchange="handleFiles('render')">
-        <div class="upload-icon">🏛️</div>
-        <div class="upload-label">Tap to add rendered image</div>
-        <div class="upload-hint">📷 Take photo or 🖼 choose from gallery · PDF ok</div>
+      <input type="file" id="render-input" accept="image/*,application/pdf" style="display:none" onchange="handleFiles('render')">
+      <input type="file" id="render-cam-input" accept="image/*" capture="environment" style="display:none" onchange="handleFiles('render')">
+      <div style="display:flex;gap:10px;margin-bottom:8px">
+        <label for="render-cam-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #8E2A7B;border-radius:12px;cursor:pointer;background:#f9f0f7;color:#8E2A7B;font-family:inherit">
+          <span style="font-size:28px">📷</span>
+          <span style="font-size:13px;font-weight:500;margin-top:6px">Take Photo</span>
+          <span style="font-size:10px;opacity:0.7;margin-top:2px">Open Camera</span>
+        </label>
+        <label for="render-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #C85AA6;border-radius:12px;cursor:pointer;background:#fdf5fb;color:#8E2A7B;font-family:inherit">
+          <span style="font-size:28px">🖼️</span>
+          <span style="font-size:13px;font-weight:500;margin-top:6px">Gallery / PDF</span>
+          <span style="font-size:10px;opacity:0.7;margin-top:2px">Choose File</span>
+        </label>
       </div>
       <div id="render-preview"></div>
       <div class="upload-progress" id="render-progress" style="display:none">
@@ -734,15 +742,20 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
     <!-- Site Video -->
     <div class="field">
       <label>Site Video</label>
-      <div class="upload-box" id="video-box"
-           ondragover="e.preventDefault();this.classList.add('drag-over')"
-           ondragleave="this.classList.remove('drag-over')"
-           ondrop="handleDrop(event,'video')">
-        <input type="file" id="video-input" accept="video/*"
-               onchange="handleFiles('video')">
-        <div class="upload-icon">🎬</div>
-        <div class="upload-label">Tap to add site video</div>
-        <div class="upload-hint">📹 Record video or 📁 choose from gallery</div>
+      <input type="file" id="video-input" accept="video/*" style="display:none" onchange="handleFiles('video')">
+      <input type="file" id="video-cam-input" accept="video/*" capture="environment" style="display:none" onchange="handleFiles('video')">
+      <div style="display:flex;gap:10px;margin-bottom:8px">
+        <label for="video-cam-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #8E2A7B;border-radius:12px;cursor:pointer;background:#f9f0f7;color:#8E2A7B;font-family:inherit">
+          <span style="font-size:28px">📹</span>
+          <span style="font-size:13px;font-weight:500;margin-top:6px">Record</span>
+          <span style="font-size:10px;opacity:0.7;margin-top:2px">Open Camera</span>
+        </label>
+        <label for="video-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #C85AA6;border-radius:12px;cursor:pointer;background:#fdf5fb;color:#8E2A7B;font-family:inherit">
+          <span style="font-size:28px">📁</span>
+          <span style="font-size:13px;font-weight:500;margin-top:6px">Gallery</span>
+          <span style="font-size:10px;opacity:0.7;margin-top:2px">Choose File</span>
+        </label>
+      </div>
       </div>
       <div id="video-preview"></div>
       <div class="upload-progress" id="video-progress" style="display:none">
