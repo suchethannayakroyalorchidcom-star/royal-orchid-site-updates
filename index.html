@@ -695,19 +695,15 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
     <!-- Site Photos -->
     <div class="field">
       <label>Site Photos</label>
-      <input type="file" id="photos-input" multiple accept="image/*" style="display:none" onchange="handleFiles('photos')">
-      <input type="file" id="photos-cam-input" multiple accept="image/*" capture="environment" style="display:none" onchange="handleFiles('photos')">
-      <div style="display:flex;gap:10px;margin-bottom:8px">
-        <label for="photos-cam-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #8E2A7B;border-radius:12px;cursor:pointer;background:#f9f0f7;color:#8E2A7B;font-family:inherit">
-          <span style="font-size:28px">📷</span>
-          <span style="font-size:13px;font-weight:500;margin-top:6px">Take Photo</span>
-          <span style="font-size:10px;opacity:0.7;margin-top:2px">Open Camera</span>
-        </label>
-        <label for="photos-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #C85AA6;border-radius:12px;cursor:pointer;background:#fdf5fb;color:#8E2A7B;font-family:inherit">
-          <span style="font-size:28px">🖼️</span>
-          <span style="font-size:13px;font-weight:500;margin-top:6px">Gallery</span>
-          <span style="font-size:10px;opacity:0.7;margin-top:2px">Choose Files</span>
-        </label>
+      <div class="upload-box" id="photos-box"
+           ondragover="e.preventDefault();this.classList.add('drag-over')"
+           ondragleave="this.classList.remove('drag-over')"
+           ondrop="handleDrop(event,'photos')">
+        <input type="file" id="photos-input" multiple accept="image/*"
+               onchange="handleFiles('photos')">
+        <div class="upload-icon">📸</div>
+        <div class="upload-label">Tap to add site photos</div>
+        <div class="upload-hint">JPG, PNG · multiple allowed</div>
       </div>
       <div class="preview-grid" id="photos-preview"></div>
     </div>
@@ -717,19 +713,15 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
     <!-- Rendered Image -->
     <div class="field">
       <label>Architectural Render / Design Image</label>
-      <input type="file" id="render-input" accept="image/*,application/pdf" style="display:none" onchange="handleFiles('render')">
-      <input type="file" id="render-cam-input" accept="image/*" capture="environment" style="display:none" onchange="handleFiles('render')">
-      <div style="display:flex;gap:10px;margin-bottom:8px">
-        <label for="render-cam-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #8E2A7B;border-radius:12px;cursor:pointer;background:#f9f0f7;color:#8E2A7B;font-family:inherit">
-          <span style="font-size:28px">📷</span>
-          <span style="font-size:13px;font-weight:500;margin-top:6px">Take Photo</span>
-          <span style="font-size:10px;opacity:0.7;margin-top:2px">Open Camera</span>
-        </label>
-        <label for="render-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #C85AA6;border-radius:12px;cursor:pointer;background:#fdf5fb;color:#8E2A7B;font-family:inherit">
-          <span style="font-size:28px">🖼️</span>
-          <span style="font-size:13px;font-weight:500;margin-top:6px">Gallery / PDF</span>
-          <span style="font-size:10px;opacity:0.7;margin-top:2px">Choose File</span>
-        </label>
+      <div class="upload-box" id="render-box"
+           ondragover="e.preventDefault();this.classList.add('drag-over')"
+           ondragleave="this.classList.remove('drag-over')"
+           ondrop="handleDrop(event,'render')">
+        <input type="file" id="render-input" accept="image/*,application/pdf"
+               onchange="handleFiles('render')">
+        <div class="upload-icon">🏛️</div>
+        <div class="upload-label">Tap to add rendered image</div>
+        <div class="upload-hint">JPG, PNG, PDF · 1 file</div>
       </div>
       <div id="render-preview"></div>
       <div class="upload-progress" id="render-progress" style="display:none">
@@ -742,20 +734,15 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
     <!-- Site Video -->
     <div class="field">
       <label>Site Video</label>
-      <input type="file" id="video-input" accept="video/*" style="display:none" onchange="handleFiles('video')">
-      <input type="file" id="video-cam-input" accept="video/*" capture="environment" style="display:none" onchange="handleFiles('video')">
-      <div style="display:flex;gap:10px;margin-bottom:8px">
-        <label for="video-cam-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #8E2A7B;border-radius:12px;cursor:pointer;background:#f9f0f7;color:#8E2A7B;font-family:inherit">
-          <span style="font-size:28px">📹</span>
-          <span style="font-size:13px;font-weight:500;margin-top:6px">Record</span>
-          <span style="font-size:10px;opacity:0.7;margin-top:2px">Open Camera</span>
-        </label>
-        <label for="video-input" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;border:2px dashed #C85AA6;border-radius:12px;cursor:pointer;background:#fdf5fb;color:#8E2A7B;font-family:inherit">
-          <span style="font-size:28px">📁</span>
-          <span style="font-size:13px;font-weight:500;margin-top:6px">Gallery</span>
-          <span style="font-size:10px;opacity:0.7;margin-top:2px">Choose File</span>
-        </label>
-      </div>
+      <div class="upload-box" id="video-box"
+           ondragover="e.preventDefault();this.classList.add('drag-over')"
+           ondragleave="this.classList.remove('drag-over')"
+           ondrop="handleDrop(event,'video')">
+        <input type="file" id="video-input" accept="video/*"
+               onchange="handleFiles('video')">
+        <div class="upload-icon">🎬</div>
+        <div class="upload-label">Tap to add site video</div>
+        <div class="upload-hint">MP4, MOV · 1 file</div>
       </div>
       <div id="video-preview"></div>
       <div class="upload-progress" id="video-progress" style="display:none">
@@ -955,26 +942,8 @@ let isSaving  = false;
 
 // ── Init ─────────────────────────────────────────────────
 window.addEventListener("DOMContentLoaded", () => {
+  // Hotels are hardcoded — form loads instantly, no API needed
   populateHotelDropdown();
-
-  // Check URL param ?hotel=INDEX — if present, lock to that hotel
-  const params   = new URLSearchParams(window.location.search);
-  const hotelIdx = params.get("hotel");
-  if (hotelIdx !== null && HOTELS_DATA[parseInt(hotelIdx)]) {
-    const sel = document.getElementById("hotel-select");
-    sel.value = hotelIdx;
-    // Hide the dropdown row — show hotel name as fixed label instead
-    sel.style.display = "none";
-    const locked = document.createElement("div");
-    locked.className = "city-display";
-    locked.style.fontStyle = "normal";
-    locked.style.fontWeight = "500";
-    locked.style.color = "var(--ink)";
-    locked.textContent = HOTELS_DATA[parseInt(hotelIdx)].name + "  —  " + HOTELS_DATA[parseInt(hotelIdx)].city;
-    sel.parentNode.insertBefore(locked, sel.nextSibling);
-    onHotelChange();  // auto-trigger hotel selection
-  }
-
   document.getElementById("loading-screen").style.display = "none";
   document.getElementById("main-form").style.display      = "block";
   document.getElementById("action-bar").style.display     = "block";
