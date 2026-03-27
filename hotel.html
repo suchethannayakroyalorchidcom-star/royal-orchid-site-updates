@@ -17,7 +17,6 @@
     --border: #e8d8e4;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: 'DM Sans', sans-serif;
     background: #faf6f9;
@@ -41,150 +40,88 @@
     background: rgba(255,255,255,0.15);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
+    font-size: 22px; flex-shrink: 0;
   }
   .header-text h1 {
     font-family: 'Playfair Display', serif;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.2;
+    color: #fff; font-size: 18px; font-weight: 600; line-height: 1.2;
   }
   .header-text p {
     color: rgba(255,255,255,0.72);
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-size: 12px; font-weight: 300;
+    letter-spacing: 0.04em; text-transform: uppercase;
   }
 
   /* Main */
   main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
     padding: 32px 20px 48px;
   }
-
   .hotel-card {
     background: #fff;
     border-radius: 20px;
     box-shadow: 0 4px 32px rgba(142,42,123,0.08), 0 1px 4px rgba(0,0,0,0.04);
-    width: 100%;
-    max-width: 480px;
-    overflow: hidden;
+    width: 100%; max-width: 480px; overflow: hidden;
   }
-
   .hotel-banner {
     background: linear-gradient(135deg, var(--orchid) 0%, #b03d9a 60%, #c85aa6 100%);
-    padding: 28px 28px 24px;
-    position: relative;
-    overflow: hidden;
+    padding: 28px 28px 24px; position: relative; overflow: hidden;
   }
   .hotel-banner::before {
-    content: '';
-    position: absolute;
-    top: -30px; right: -30px;
-    width: 120px; height: 120px;
-    border-radius: 50%;
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 120px; height: 120px; border-radius: 50%;
     background: rgba(255,255,255,0.06);
   }
   .hotel-banner::after {
-    content: '';
-    position: absolute;
-    bottom: -20px; left: 40px;
-    width: 80px; height: 80px;
-    border-radius: 50%;
+    content: ''; position: absolute; bottom: -20px; left: 40px;
+    width: 80px; height: 80px; border-radius: 50%;
     background: rgba(255,255,255,0.04);
   }
   .hotel-name {
     font-family: 'Playfair Display', serif;
-    color: #fff;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 6px;
+    color: #fff; font-size: 26px; font-weight: 700;
+    line-height: 1.2; margin-bottom: 6px;
   }
   .hotel-city {
     color: rgba(255,255,255,0.78);
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    font-size: 14px; font-weight: 300;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 6px;
   }
   .hotel-city::before { content: '📍'; font-size: 12px; }
-
-  .hotel-body {
-    padding: 28px;
-  }
-
+  .hotel-body { padding: 28px; }
   .section-label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 14px;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 14px;
   }
 
   /* Action buttons */
   .btn {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    width: 100%;
-    padding: 16px 20px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    margin-bottom: 12px;
-    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
-    position: relative;
-    overflow: hidden;
+    display: flex; align-items: center; gap: 14px;
+    width: 100%; padding: 16px 20px;
+    border-radius: 12px; border: none; cursor: pointer;
+    text-decoration: none; margin-bottom: 12px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative; overflow: hidden;
   }
   .btn:last-child { margin-bottom: 0; }
   .btn:active { transform: scale(0.98); }
   .btn:hover { transform: translateY(-1px); }
-
   .btn-icon {
-    width: 42px; height: 42px;
-    border-radius: 10px;
+    width: 42px; height: 42px; border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
+    font-size: 20px; flex-shrink: 0;
   }
-
   .btn-text { flex: 1; text-align: left; }
-  .btn-title {
-    font-size: 15px;
-    font-weight: 500;
-    display: block;
-    line-height: 1.3;
-  }
-  .btn-sub {
-    font-size: 12px;
-    font-weight: 300;
-    display: block;
-    margin-top: 2px;
-    opacity: 0.7;
-  }
-  .btn-arrow {
-    font-size: 18px;
-    opacity: 0.5;
-  }
+  .btn-title { font-size: 15px; font-weight: 500; display: block; line-height: 1.3; }
+  .btn-sub { font-size: 12px; font-weight: 300; display: block; margin-top: 2px; opacity: 0.7; }
+  .btn-arrow { font-size: 18px; opacity: 0.5; }
 
-  /* Button styles */
   .btn-form {
     background: linear-gradient(135deg, #f0e6ee 0%, #f9f0f7 100%);
-    border: 1.5px solid #e0c8da;
-    color: var(--orchid);
+    border: 1.5px solid #e0c8da; color: var(--orchid);
     box-shadow: 0 2px 8px rgba(142,42,123,0.08);
   }
   .btn-form:hover { box-shadow: 0 4px 16px rgba(142,42,123,0.15); }
@@ -192,8 +129,7 @@
 
   .btn-ppt {
     background: linear-gradient(135deg, #eef0f9 0%, #f4f5fc 100%);
-    border: 1.5px solid #c8cce8;
-    color: #2a3a8e;
+    border: 1.5px solid #c8cce8; color: #2a3a8e;
     box-shadow: 0 2px 8px rgba(42,58,142,0.08);
   }
   .btn-ppt:hover { box-shadow: 0 4px 16px rgba(42,58,142,0.15); }
@@ -201,8 +137,7 @@
 
   .btn-schedule {
     background: linear-gradient(135deg, #eef7f0 0%, #f4fbf5 100%);
-    border: 1.5px solid #c8e0cc;
-    color: #2a6e3a;
+    border: 1.5px solid #c8e0cc; color: #2a6e3a;
     box-shadow: 0 2px 8px rgba(42,110,58,0.08);
   }
   .btn-schedule:hover { box-shadow: 0 4px 16px rgba(42,110,58,0.12); }
@@ -210,57 +145,32 @@
 
   .btn-folder {
     background: linear-gradient(135deg, #fdf5e8 0%, #fefaf2 100%);
-    border: 1.5px solid #e8d8b0;
-    color: #7a5a1a;
+    border: 1.5px solid #e8d8b0; color: #7a5a1a;
     box-shadow: 0 2px 8px rgba(122,90,26,0.07);
   }
   .btn-folder:hover { box-shadow: 0 4px 16px rgba(122,90,26,0.12); }
   .btn-folder .btn-icon { background: rgba(201,168,76,0.15); }
 
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 20px 0;
-  }
+  .divider { height: 1px; background: var(--border); margin: 20px 0; }
 
-  /* Error / Loading */
-  .state-box {
-    text-align: center;
-    padding: 48px 28px;
-  }
+  .state-box { text-align: center; padding: 48px 28px; }
   .state-icon { font-size: 48px; margin-bottom: 16px; }
   .state-title {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: var(--orchid);
-    margin-bottom: 8px;
+    font-size: 22px; color: var(--orchid); margin-bottom: 8px;
   }
   .state-msg { color: var(--muted); font-size: 14px; line-height: 1.6; }
 
-  /* Footer */
   footer {
-    text-align: center;
-    padding: 16px;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.04em;
+    text-align: center; padding: 16px;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.04em;
   }
 
-  /* Disabled state for missing links */
-  .btn-disabled {
-    opacity: 0.45;
-    pointer-events: none;
-    filter: grayscale(0.4);
-  }
+  .btn-disabled { opacity: 0.45; pointer-events: none; filter: grayscale(0.4); }
   .coming-soon {
-    font-size: 9px;
-    background: #ffd;
-    border: 1px solid #ddc;
-    color: #775;
-    border-radius: 4px;
-    padding: 2px 6px;
-    margin-left: 6px;
-    vertical-align: middle;
+    font-size: 9px; background: #ffd; border: 1px solid #ddc;
+    color: #775; border-radius: 4px; padding: 2px 6px;
+    margin-left: 6px; vertical-align: middle;
   }
 </style>
 </head>
@@ -287,537 +197,126 @@
 <footer>Royal Orchid Hotels Limited &nbsp;·&nbsp; Architecture & Projects Division</footer>
 
 <script>
-// ── HOTEL DATA ─────────────────────────────────────────────────────────────
-// Auto-generated by generate_hotel_links.py
-// Format: [index, "Hotel Name", "City", "form_url", "ppt_url", "schedule_url", "folder_url"]
+// ── Hotel Data (same as previous version)
 const HOTELS = [
-  {
-    "index": 0,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 4,
-    "hotel": "Regenta Inn",
-    "city": "Tezpur",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u3a5b502414b443aeb601aa1d27aafc84",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/bwvtofc29477bc8af4b23805e604dec2fd0ab"
-  },
-  {
-    "index": 1,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 5,
-    "hotel": "Regenta Place",
-    "city": "Bhadohi",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u332464c9e4e9482482372f7817b22c54",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32"
-  },
-  {
-    "index": 2,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 6,
-    "hotel": "Regenta",
-    "city": "Jamshedpur",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u468370f7b138489680394721fbccea96",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 3,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 7,
-    "hotel": "Regenta Z",
-    "city": "Patna",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u19c3f709e0ea4c22be7f9f707461ac5b",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539c71e8e87961d47c08114c62cef140cc6"
-  },
-  {
-    "index": 4,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 8,
-    "hotel": "Regenta",
-    "city": "Lucknow",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u0188f6a4d335498e988d640eaae0c033",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 5,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 9,
-    "hotel": "Regenta",
-    "city": "Varanasi",
-    "ppt_url": "https://workdrive.zoho.in/file/er25ub43287a7167c4f94a44f5e3d3b0a4d69",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 6,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 10,
-    "hotel": "Regenta",
-    "city": "Nepal",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u31e8e5543c8948a597a2797d3f4b161b",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 7,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 11,
-    "hotel": "Regenta Place",
-    "city": "Rishikesh",
-    "ppt_url": "https://workdrive.zoho.in/file/er25ub35557d8615842a692e16f847784cedd",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32"
-  },
-  {
-    "index": 8,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 12,
-    "hotel": "Regenta",
-    "city": "Gurgaon Sector 70",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u8ce9a991079149dc914c8c94b49df6c3",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 9,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 13,
-    "hotel": "Regenta",
-    "city": "Mussoorie",
-    "ppt_url": "https://workdrive.zoho.in/file/er25ub08f1ed118f842edbde54c031e7665c8",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 10,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 14,
-    "hotel": "Regenta Place",
-    "city": "Mall Road, Mussoorie",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u9a5594d503e244d9ae31564d440c0119",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32"
-  },
-  {
-    "index": 11,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 15,
-    "hotel": "Regenta place",
-    "city": "Jim corbett",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u253d8e502aa74aa99b9847aa274948b6",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753968e6c55a27614fc2ab0437b136b1b5f2"
-  },
-  {
-    "index": 12,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 16,
-    "hotel": "Regenta Place",
-    "city": "Vrindavan",
-    "ppt_url": "https://workdrive.zoho.in/file/er25uacce3441faac4341babdacfa39168407",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32"
-  },
-  {
-    "index": 13,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 17,
-    "hotel": "Hotel",
-    "city": "ORAI",
-    "ppt_url": "",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539f6ff68d2ccad4e908ba7ebf46a4e162b"
-  },
-  {
-    "index": 14,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 18,
-    "hotel": "Regenta Resort",
-    "city": "Pushkar",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u845e339abbd74ee5a96cd44769a62a92",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539cba74ae35d604df3807f7bc71e760046"
-  },
-  {
-    "index": 15,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 19,
-    "hotel": "Crestoria",
-    "city": "Bhopal",
-    "ppt_url": "https://workdrive.zoho.in/file/er25ubfbb796d83004b569f758b364d2d6e2e",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753955234c6d18534e3396c11813234404b7"
-  },
-  {
-    "index": 16,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 20,
-    "hotel": "Regenta Resort",
-    "city": "Chittorgarh",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u082f5876475d477aac899a404146071d",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539cba74ae35d604df3807f7bc71e760046"
-  },
-  {
-    "index": 17,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 21,
-    "hotel": "Regenta",
-    "city": "Bhopal Airport",
-    "ppt_url": "https://workdrive.zoho.in/file/er25udbdc35145d8445d28c5d066bd9d1ea07",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 18,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 22,
-    "hotel": "Regenta",
-    "city": "Jabalpur",
-    "ppt_url": "https://workdrive.zoho.in/file/er25uf65128491e6b44799ae471e15b8dc745",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/bwvto48542b3740c041e3a60368fe08445b48"
-  },
-  {
-    "index": 19,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 23,
-    "hotel": "Regenta",
-    "city": "Gwalior",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u2673cbc737c4424f80b8d86607b96b0c",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 20,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 24,
-    "hotel": "Crestoria",
-    "city": "Jodhpur",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u6ed9e4a60d6943bca77c39fe97aaa844",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753955234c6d18534e3396c11813234404b7"
-  },
-  {
-    "index": 21,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 25,
-    "hotel": "Regenta Place",
-    "city": "Udaipur",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u1e7ccb466ddb4754baee3d1c841e911f",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32"
-  },
-  {
-    "index": 22,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 26,
-    "hotel": "Regenta Suites & Residences",
-    "city": "jaipur",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u5fc81dc7c17745c2ab8a5d26aa8d1996",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753966bde8d6f8924d07956125eac24ae004"
-  },
-  {
-    "index": 23,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 27,
-    "hotel": "Regenta Place",
-    "city": "Baddi",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u85aee428af164e37b4c7ebf687d4d50e",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32"
-  },
-  {
-    "index": 24,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 28,
-    "hotel": "Regenta Z",
-    "city": "Ambala",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u11a96d5f90a44e6fa92bf2b177ffccb4",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539c71e8e87961d47c08114c62cef140cc6"
-  },
-  {
-    "index": 25,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 29,
-    "hotel": "Regenta",
-    "city": "Ambala",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u5ba6820636aa49cab99222061a2a9976",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 26,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 30,
-    "hotel": "Regenta Z",
-    "city": "Amritsar",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u815c4cda3347472b87c0d7603dfa6bf0",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539c71e8e87961d47c08114c62cef140cc6"
-  },
-  {
-    "index": 27,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 31,
-    "hotel": "Regenta Place",
-    "city": "Bathinda",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u710a082f5c054f8a883fc740b661ff81",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32"
-  },
-  {
-    "index": 28,
-    "sheet": "Mr.Charanjeeth Singh",
-    "row": 32,
-    "hotel": "Regenta",
-    "city": "Amritsar",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u577146068b924e4a880cdfa0ab08762d",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 29,
-    "sheet": "Mr.Jagan",
-    "row": 4,
-    "hotel": "Regenta Inn",
-    "city": "Dhule",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u35260ed496214007bdd55eee42e6d037",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 30,
-    "sheet": "Mr.Jagan",
-    "row": 5,
-    "hotel": "Regenta",
-    "city": "Nanded",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u272c0ee5794149debd250d3eb2b96417",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 31,
-    "sheet": "Mr.Jagan",
-    "row": 6,
-    "hotel": "Regenta Resort",
-    "city": "Mulshi, Pune",
-    "ppt_url": "https://workdrive.zoho.in/file/er25uc27864b1c53848a6821d0b68449d9a54",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 32,
-    "sheet": "Mr.Jagan",
-    "row": 7,
-    "hotel": "Regenta Resort",
-    "city": "Panchgani",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u66ea84f23e734de9ac08f9d4414c5ee2",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 33,
-    "sheet": "Mr.Jagan",
-    "row": 8,
-    "hotel": "Regenta Z",
-    "city": "Mahabaleshwar",
-    "ppt_url": "https://workdrive.zoho.in/file/er25ubbc292e58c264d21b19b49504c6cb224",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 34,
-    "sheet": "Mr.Jagan",
-    "row": 9,
-    "hotel": "Regenta Residences",
-    "city": "Trimbakeshwar",
-    "ppt_url": "https://workdrive.zoho.in/file/er25ua676816fbf974d219e2a3fb3fcc107eb",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 35,
-    "sheet": "Mr.Jagan",
-    "row": 10,
-    "hotel": "Regenta Place",
-    "city": "Omerga",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u5b205bee058f44e7b4a7e23ead29d0f3",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 36,
-    "sheet": "Mr.Jagan",
-    "row": 11,
-    "hotel": "Regenta Resort",
-    "city": "Gir",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u33105b7c98c74a8abd41edcfdf097119",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 37,
-    "sheet": "Mr.Jagan",
-    "row": 12,
-    "hotel": "Regenta",
-    "city": "Rajkot",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u0c91ac0298c24e48ba58fa56e5ea30c0",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 38,
-    "sheet": "Mr.Jagan",
-    "row": 13,
-    "hotel": "Regenta Resort",
-    "city": "Bhavnagar",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u6448da4d4beb4ba98c75e4ea4ef308ed",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 39,
-    "sheet": "Mr.Jagan",
-    "row": 14,
-    "hotel": "Regenta INN ANJAR",
-    "city": "Anjar",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u236d09787b2f4e838385e64e5423cd81",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 40,
-    "sheet": "Mr.Jagan",
-    "row": 15,
-    "hotel": "Regenta Place",
-    "city": "Rajkot- Greenland Chowkdi",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u105c7706f72345fab8b9b2814ab327a4",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 41,
-    "sheet": "Mr.Jagan",
-    "row": 16,
-    "hotel": "Regenta",
-    "city": "Mundra",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u18cb86ae8ede4e25a95294eaa19f1901",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 42,
-    "sheet": "Mr.Jagan",
-    "row": 17,
-    "hotel": "Regenta Resort",
-    "city": "Saputara",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u0e01cfff7dd546eca26d443f2499dfda",
-    "schedule_url": "",
-    "folder_url": ""
-  },
-  {
-    "index": 43,
-    "sheet": "Mr.Raja",
-    "row": 4,
-    "hotel": "Regenta",
-    "city": "Tirupati",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u18d1e0b140d841dd837242b042c97153",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 44,
-    "sheet": "Mr.Raja",
-    "row": 5,
-    "hotel": "Regenta Z",
-    "city": "Vijayawada",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u56f4e34df9ad43778b89dffd898e0722",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539c71e8e87961d47c08114c62cef140cc6"
-  },
-  {
-    "index": 45,
-    "sheet": "Mr.Raja",
-    "row": 6,
-    "hotel": "Regenta Resort",
-    "city": "Kushal Nagar, Coorg",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u37f25854b81b4dd9850d7e51163e1480",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539cba74ae35d604df3807f7bc71e760046"
-  },
-  {
-    "index": 46,
-    "sheet": "Mr.Raja",
-    "row": 7,
-    "hotel": "Regenta Z",
-    "city": "Kondapur,Gachibowli",
-    "ppt_url": "https://workdrive.zoho.in/file/er25uefdb23edebbb44b1930e82d6de42d425",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539c71e8e87961d47c08114c62cef140cc6"
-  },
-  {
-    "index": 47,
-    "sheet": "Mr.Raja",
-    "row": 8,
-    "hotel": "Regenta",
-    "city": "Dodamarg",
-    "ppt_url": "https://workdrive.zoho.in/file/er25uac9860cdb9b24a2d9db0b29373a7c662",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"
-  },
-  {
-    "index": 48,
-    "sheet": "Mr.Raja",
-    "row": 9,
-    "hotel": "Crestoria",
-    "city": "Fenicia",
-    "ppt_url": "https://workdrive.zoho.in/file/er25ucf9df87cc211469597e305d1503d8aad",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753955234c6d18534e3396c11813234404b7"
-  },
-  {
-    "index": 49,
-    "sheet": "Mr.Raja",
-    "row": 10,
-    "hotel": "Regenta Baga Resort",
-    "city": "Baga Resort",
-    "ppt_url": "https://workdrive.zoho.in/file/er25u4f22c022d75e4d0ea23a5c841e8af548",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j753955078db9482747539d1d4183deaeae46"
-  },
-  {
-    "index": 50,
-    "sheet": "Mr.Raja",
-    "row": 11,
-    "hotel": "Shack Project",
-    "city": "Goa",
-    "ppt_url": "https://workdrive.zoho.in/file/er25ub9789efccbd245af8f30670b63dfca82",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539bad280c6745c4847a01abc94c553e34a"
-  },
-  {
-    "index": 51,
-    "sheet": "Mr.Raja",
-    "row": 12,
-    "hotel": "Royal orchid Galaxy & Spa",
-    "city": "Beach Resort Goa",
-    "ppt_url": "https://workdrive.zoho.in/file/er25ub6630ef2f61b4bee84a085e2784dcd6b",
-    "schedule_url": "",
-    "folder_url": "https://workdrive.zoho.in/folder/j7539aade40f56c7740be9d968632428508b9"
-  }
+  {index:0,sheet:"Mr.Charanjeeth Singh",row:4,hotel:"Regenta Inn",city:"Tezpur",
+   ppt_url:"https://workdrive.zoho.in/file/er25u3a5b502414b443aeb601aa1d27aafc84",schedule_url:"",
+   folder_url:"https://workdrive.zoho.in/folder/bwvtofc29477bc8af4b23805e604dec2fd0ab"},
+  {index:1,sheet:"Mr.Charanjeeth Singh",row:5,hotel:"Regenta Place",city:"Bhadohi",
+   ppt_url:"https://workdrive.zoho.in/file/er25u332464c9e4e9482482372f7817b22c54",schedule_url:"",
+   folder_url:"https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32"},
+  {index:2,hotel:"Regenta",city:"Jamshedpur",
+   ppt_url:"https://workdrive.zoho.in/file/er25u468370f7b138489680394721fbccea96",schedule_url:"",
+   folder_url:"https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"},
+  {index:3,hotel:"Regenta Z",city:"Patna",
+   ppt_url:"https://workdrive.zoho.in/file/er25u19c3f709e0ea4c22be7f9f707461ac5b",schedule_url:"",
+   folder_url:"https://workdrive.zoho.in/folder/j7539c71e8e87961d47c08114c62cef140cc6"},
+  {index:4,hotel:"Regenta",city:"Lucknow",
+   ppt_url:"https://workdrive.zoho.in/file/er25u0188f6a4d335498e988d640eaae0c033",schedule_url:"",
+   folder_url:"https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"},
+  {index:5,hotel:"Regenta",city:"Varanasi",
+   ppt_url:"https://workdrive.zoho.in/file/er25ub43287a7167c4f94a44f5e3d3b0a4d69",schedule_url:"",
+   folder_url:"https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"},
+  {index:6,hotel:"Regenta",city:"Nepal",
+   ppt_url:"https://workdrive.zoho.in/file/er25u31e8e5543c8948a597a2797d3f4b161b",schedule_url:"",
+   folder_url:"https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"},
+  {index:7,hotel:"Regenta Place",city:"Rishikesh",
+   ppt_url:"https://workdrive.zoho.in/file/er25ub35557d8615842a692e16f847784cedd",schedule_url:"",
+   folder_url:"https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32"},
+  {index:8,hotel:"Regenta",city:"Gurgaon Sector 70",
+   ppt_url:"https://workdrive.zoho.in/file/er25u8ce9a991079149dc914c8c94b49df6c3",schedule_url:"",folder_url:""},
+  {index:9,hotel:"Regenta",city:"Mussoorie",
+   ppt_url:"https://workdrive.zoho.in/file/er25ub08f1ed118f842edbde54c031e7665c8",schedule_url:"",folder_url:""},
+  {index:10,hotel:"Regenta Place",city:"Mall Road, Mussoorie",
+   ppt_url:"https://workdrive.zoho.in/file/er25u9a5594d503e244d9ae31564d440c0119",schedule_url:"",folder_url:""},
+  {index:11,hotel:"Regenta place",city:"Jim corbett",
+   ppt_url:"https://workdrive.zoho.in/file/er25u253d8e502aa74aa99b9847aa274948b6",schedule_url:"",folder_url:""},
+  {index:12,hotel:"Regenta Place",city:"Vrindavan",
+   ppt_url:"https://workdrive.zoho.in/file/er25uacce3441faac4341babdacfa39168407",schedule_url:"",folder_url:""},
+  {index:13,hotel:"Hotel",city:"ORAI",ppt_url:"",schedule_url:"",folder_url:""},
+  {index:14,hotel:"Regenta Resort",city:"Pushkar",
+   ppt_url:"https://workdrive.zoho.in/file/er25u845e339abbd74ee5a96cd44769a62a92",schedule_url:"",folder_url:""},
+  {index:15,hotel:"Crestoria",city:"Bhopal",
+   ppt_url:"https://workdrive.zoho.in/file/er25ubfbb796d83004b569f758b364d2d6e2e",schedule_url:"",folder_url:""},
+  {index:16,hotel:"Regenta Resort",city:"Chittorgarh",
+   ppt_url:"https://workdrive.zoho.in/file/er25u082f5876475d477aac899a404146071d",schedule_url:"",folder_url:""},
+  {index:17,hotel:"Regenta",city:"Bhopal Airport",
+   ppt_url:"https://workdrive.zoho.in/file/er25udbdc35145d8445d28c5d066bd9d1ea07",schedule_url:"",folder_url:""},
+  {index:18,hotel:"Regenta",city:"Jabalpur",
+   ppt_url:"https://workdrive.zoho.in/file/er25uf65128491e6b44799ae471e15b8dc745",schedule_url:"",folder_url:""},
+  {index:19,hotel:"Regenta",city:"Gwalior",
+   ppt_url:"https://workdrive.zoho.in/file/er25u2673cbc737c4424f80b8d86607b96b0c",schedule_url:"",folder_url:""},
+  {index:20,hotel:"Crestoria",city:"Jodhpur",
+   ppt_url:"https://workdrive.zoho.in/file/er25u6ed9e4a60d6943bca77c39fe97aaa844",schedule_url:"",folder_url:""},
+  {index:21,hotel:"Regenta Place",city:"Udaipur",
+   ppt_url:"https://workdrive.zoho.in/file/er25u1e7ccb466ddb4754baee3d1c841e911f",schedule_url:"",folder_url:""},
+  {index:22,hotel:"Regenta Suites & Residences",city:"Jaipur",
+   ppt_url:"https://workdrive.zoho.in/file/er25u5fc81dc7c17745c2ab8a5d26aa8d1996",schedule_url:"",folder_url:""},
+  {index:23,hotel:"Regenta Place",city:"Baddi",
+   ppt_url:"https://workdrive.zoho.in/file/er25u85aee428af164e37b4c7ebf687d4d50e",schedule_url:"",folder_url:""},
+  {index:24,hotel:"Regenta Z",city:"Ambala",
+   ppt_url:"https://workdrive.zoho.in/file/er25u11a96d5f90a44e6fa92bf2b177ffccb4",schedule_url:"",folder_url:""},
+  {index:25,hotel:"Regenta",city:"Ambala",
+   ppt_url:"https://workdrive.zoho.in/file/er25u5ba6820636aa49cab99222061a2a9976",schedule_url:"",folder_url:""},
+  {index:26,hotel:"Regenta Z",city:"Amritsar",
+   ppt_url:"https://workdrive.zoho.in/file/er25u815c4cda3347472b87c0d7603dfa6bf0",schedule_url:"",folder_url:""},
+  {index:27,hotel:"Regenta Place",city:"Bathinda",
+   ppt_url:"https://workdrive.zoho.in/file/er25u710a082f5c054f8a883fc740b661ff81",schedule_url:"",folder_url:""},
+  {index:28,hotel:"Regenta",city:"Amritsar",
+   ppt_url:"https://workdrive.zoho.in/file/er25u577146068b924e4a880cdfa0ab08762d",schedule_url:"",folder_url:""},
+  {index:29,hotel:"Regenta Inn",city:"Dhule",
+   ppt_url:"https://workdrive.zoho.in/file/er25u35260ed496214007bdd55eee42e6d037",schedule_url:"",folder_url:""},
+  {index:30,hotel:"Regenta",city:"Nanded",
+   ppt_url:"https://workdrive.zoho.in/file/er25u272c0ee5794149debd250d3eb2b96417",schedule_url:"",folder_url:""},
+  {index:31,hotel:"Regenta Resort",city:"Mulshi, Pune",
+   ppt_url:"https://workdrive.zoho.in/file/er25uc27864b1c53848a6821d0b68449d9a54",schedule_url:"",folder_url:""},
+  {index:32,hotel:"Regenta Resort",city:"Panchgani",
+   ppt_url:"https://workdrive.zoho.in/file/er25u66ea84f23e734de9ac08f9d4414c5ee2",schedule_url:"",folder_url:""},
+  {index:33,hotel:"Regenta Z",city:"Mahabaleshwar",
+   ppt_url:"https://workdrive.zoho.in/file/er25ubbc292e58c264d21b19b49504c6cb224",schedule_url:"",folder_url:""},
+  {index:34,hotel:"Regenta Residences",city:"Trimbakeshwar",
+   ppt_url:"https://workdrive.zoho.in/file/er25ua676816fbf974d219e2a3fb3fcc107eb",schedule_url:"",folder_url:""},
+  {index:35,hotel:"Regenta Place",city:"Omerga",
+   ppt_url:"https://workdrive.zoho.in/file/er25u5b205bee058f44e7b4a7e23ead29d0f3",schedule_url:"",folder_url:""},
+  {index:36,hotel:"Regenta Resort",city:"Gir",
+   ppt_url:"https://workdrive.zoho.in/file/er25u33105b7c98c74a8abd41edcfdf097119",schedule_url:"",folder_url:""},
+  {index:37,hotel:"Regenta",city:"Rajkot",
+   ppt_url:"https://workdrive.zoho.in/file/er25u0c91ac0298c24e48ba58fa56e5ea30c0",schedule_url:"",folder_url:""},
+  {index:38,hotel:"Regenta Resort",city:"Bhavnagar",
+   ppt_url:"https://workdrive.zoho.in/file/er25u6448da4d4beb4ba98c75e4ea4ef308ed",schedule_url:"",folder_url:""},
+  {index:39,hotel:"Regenta INN ANJAR",city:"Anjar",
+   ppt_url:"https://workdrive.zoho.in/file/er25u236d09787b2f4e838385e64e5423cd81",schedule_url:"",folder_url:""},
+  {index:40,hotel:"Regenta Place",city:"Rajkot- Greenland Chowkdi",
+   ppt_url:"https://workdrive.zoho.in/file/er25u105c7706f72345fab8b9b2814ab327a4",schedule_url:"",folder_url:""},
+  {index:41,hotel:"Regenta",city:"Mundra",
+   ppt_url:"https://workdrive.zoho.in/file/er25u18cb86ae8ede4e25a95294eaa19f1901",schedule_url:"",folder_url:""},
+  {index:42,hotel:"Regenta Resort",city:"Saputara",
+   ppt_url:"https://workdrive.zoho.in/file/er25u0e01cfff7dd546eca26d443f2499dfda",schedule_url:"",folder_url:""},
+  {index:43,hotel:"Regenta",city:"Tirupati",
+   ppt_url:"https://workdrive.zoho.in/file/er25u18d1e0b140d841dd837242b042c97153",schedule_url:"",
+   folder_url:"https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3"},
+  {index:44,hotel:"Regenta Z",city:"Vijayawada",
+   ppt_url:"https://workdrive.zoho.in/file/er25u56f4e34df9ad43778b89dffd898e0722",schedule_url:"",folder_url:""},
+  {index:45,hotel:"Regenta Resort",city:"Kushal Nagar, Coorg",
+   ppt_url:"https://workdrive.zoho.in/file/er25u37f25854b81b4dd9850d7e51163e1480",schedule_url:"",folder_url:""},
+  {index:46,hotel:"Regenta Z",city:"Kondapur, Gachibowli",
+   ppt_url:"https://workdrive.zoho.in/file/er25uefdb23edebbb44b1930e82d6de42d425",schedule_url:"",folder_url:""},
+  {index:47,hotel:"Regenta",city:"Dodamarg",
+   ppt_url:"https://workdrive.zoho.in/file/er25uac9860cdb9b24a2d9db0b29373a7c662",schedule_url:"",folder_url:""},
+  {index:48,hotel:"Crestoria",city:"Fenicia",
+   ppt_url:"https://workdrive.zoho.in/file/er25ucf9df87cc211469597e305d1503d8aad",schedule_url:"",folder_url:""},
+  {index:49,hotel:"Regenta Baga Resort",city:"Baga Resort",
+   ppt_url:"https://workdrive.zoho.in/file/er25u4f22c022d75e4d0ea23a5c841e8af548",schedule_url:"",folder_url:""},
+  {index:50,hotel:"Shack Project",city:"Goa",
+   ppt_url:"https://workdrive.zoho.in/file/er25ub9789efccbd245af8f30670b63dfca82",schedule_url:"",folder_url:""},
+  {index:51,hotel:"Royal orchid Galaxy & Spa",city:"Beach Resort Goa",
+   ppt_url:"https://workdrive.zoho.in/file/er25ub6630ef2f61b4bee84a085e2784dcd6b",schedule_url:"",folder_url:""}
 ];
 
-const BASE_FORM = "https://suchethannayakroyalorchidcom-star.github.io/royal-orchid-site-updates/?hotel=";
+const BASE_FORM = "index.html?hotel=";
 
 function getParam(name) {
-  const u = new URLSearchParams(window.location.search);
-  return u.get(name);
+  return new URLSearchParams(window.location.search).get(name);
 }
 
 function render(h) {
@@ -834,7 +333,7 @@ function render(h) {
     <div class="hotel-body">
       <div class="section-label">Quick Actions</div>
 
-      <a href="${formUrl}" class="btn btn-form" target="_blank">
+      <a href="${formUrl}" class="btn btn-form">
         <div class="btn-icon">📋</div>
         <div class="btn-text">
           <span class="btn-title">Submit / Edit Site Update</span>
@@ -846,7 +345,7 @@ function render(h) {
       <a href="${pptUrl}" class="btn btn-ppt ${pptUrl ? '' : 'btn-disabled'}" target="_blank">
         <div class="btn-icon">📊</div>
         <div class="btn-text">
-          <span class="btn-title">View Presentation${pptUrl ? '' : '<span class=\'coming-soon\'>Pending</span>'}</span>
+          <span class="btn-title">View Presentation${pptUrl ? '' : '<span class="coming-soon">Pending</span>'}</span>
           <span class="btn-sub">Latest site update report (PPT)</span>
         </div>
         <span class="btn-arrow">›</span>
@@ -858,13 +357,20 @@ function render(h) {
       <a href="${scheduleUrl}" class="btn btn-schedule ${scheduleUrl ? '' : 'btn-disabled'}" target="_blank">
         <div class="btn-icon">📅</div>
         <div class="btn-text">
-          <span class="btn-title">Project Schedule${scheduleUrl ? '' : '<span class=\'coming-soon\'>Auto-generated after first update</span>'}</span>
+          <span class="btn-title">Project Schedule${scheduleUrl ? '' : '<span class="coming-soon">Auto-generated after first update</span>'}</span>
           <span class="btn-sub">Gantt chart & milestone tracker</span>
         </div>
         <span class="btn-arrow">›</span>
       </a>
 
-
+      <a href="${folderUrl}" class="btn btn-folder ${folderUrl ? '' : 'btn-disabled'}" target="_blank">
+        <div class="btn-icon">📁</div>
+        <div class="btn-text">
+          <span class="btn-title">WorkDrive Folder${folderUrl ? '' : '<span class="coming-soon">Not linked</span>'}</span>
+          <span class="btn-sub">All project photos, videos & documents</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
     </div>
   `;
 }

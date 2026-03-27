@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pan India Dashboard — Royal Orchid Hotels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --burg:    #6B1729;
+  --burg-d:  #4A0F1B;
+  --burg-l:  #8C2238;
+  --gold:    #C8962C;
+  --gold-l:  #E8B84B;
+  --cream:   #FAF6F0;
+  --cream-d: #F0E8DE;
+  --white:   #FFFFFF;
+  --ink:     #1C1009;
+  --muted:   #7A6A5A;
+  --border:  #DDD0C0;
+  --font-h:  'Cormorant Garamond', serif;
+  --font-b:  'DM Sans', sans-serif;
+}
+body {
+  font-family: var(--font-b);
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--burg-d) 0%, var(--burg) 100%);
+  padding: 24px 28px 20px;
+  border-bottom: 3px solid var(--gold);
+  position: sticky; top: 0; z-index: 100;
+}
+.header-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.logo-block { display: flex; flex-direction: column; gap: 2px; }
+.logo-name {
+  font-family: var(--font-h); font-size: 26px; font-weight: 700;
+  color: var(--gold-l); letter-spacing: 0.5px;
+}
+.logo-sub {
+  font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.55);
+  letter-spacing: 2px; text-transform: uppercase;
+}
+.header-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.header-btn {
+  padding: 8px 16px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08); color: var(--white);
+  font-family: var(--font-b); font-size: 12px; font-weight: 500;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 6px;
+}
+.header-btn:hover { background: rgba(255,255,255,0.15); border-color: var(--gold); }
+
+/* Stats Bar */
+.stats-bar {
+  max-width: 1200px; margin: 20px auto 0; padding: 0 20px;
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.stat-card {
+  background: var(--white); border-radius: 12px;
+  padding: 14px 20px; flex: 1; min-width: 120px;
+  box-shadow: 0 2px 12px rgba(107,23,41,0.06);
+  border: 1px solid var(--cream-d);
+}
+.stat-num {
+  font-family: var(--font-h); font-size: 28px; font-weight: 700;
+  color: var(--burg); line-height: 1;
+}
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+/* Search */
+.search-wrap {
+  max-width: 1200px; margin: 16px auto; padding: 0 20px;
+}
+.search-input {
+  width: 100%; padding: 12px 16px 12px 40px;
+  border: 1.5px solid var(--border); border-radius: 10px;
+  background: var(--white); font-family: var(--font-b);
+  font-size: 14px; color: var(--ink); outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237A6A5A' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: 14px center;
+}
+.search-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,150,44,0.12); }
+
+/* Manager Filter Tabs */
+.filter-tabs {
+  max-width: 1200px; margin: 0 auto 16px; padding: 0 20px;
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+.filter-tab {
+  padding: 6px 14px; border-radius: 20px; border: 1.5px solid var(--border);
+  background: var(--white); font-family: var(--font-b); font-size: 12px;
+  font-weight: 500; color: var(--muted); cursor: pointer; transition: all 0.2s;
+}
+.filter-tab:hover { border-color: var(--gold); color: var(--burg); }
+.filter-tab.active { background: var(--burg); color: var(--white); border-color: var(--burg); }
+
+/* Region Groups */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
+.region-group { margin-bottom: 24px; }
+.region-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 10px; padding: 8px 0;
+  border-bottom: 2px solid var(--gold);
+}
+.region-name {
+  font-family: var(--font-h); font-size: 20px; font-weight: 600;
+  color: var(--burg-d);
+}
+.region-count {
+  font-size: 11px; background: var(--burg); color: var(--white);
+  padding: 2px 8px; border-radius: 10px; font-weight: 600;
+}
+
+/* Hotel Row */
+.hotel-row {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 0.8fr auto;
+  gap: 10px; align-items: center;
+  padding: 12px 16px; margin-bottom: 6px;
+  background: var(--white); border-radius: 10px;
+  border: 1px solid var(--cream-d);
+  box-shadow: 0 1px 6px rgba(107,23,41,0.04);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.hotel-row:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(107,23,41,0.1);
+}
+.hotel-name-col {
+  display: flex; flex-direction: column; gap: 2px;
+}
+.hotel-name-text { font-size: 14px; font-weight: 600; color: var(--ink); }
+.hotel-manager { font-size: 11px; color: var(--muted); }
+.hotel-city-text { font-size: 13px; color: var(--muted); }
+.hotel-state-text { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+.link-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.link-btn {
+  padding: 6px 12px; border-radius: 8px; border: none;
+  font-family: var(--font-b); font-size: 11px; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 4px;
+  transition: all 0.15s;
+}
+.link-btn:hover { transform: scale(1.03); }
+.link-btn-form { background: var(--burg); color: var(--white); }
+.link-btn-form:hover { background: var(--burg-l); }
+.link-btn-ppt { background: #2a3a8e; color: var(--white); }
+.link-btn-ppt:hover { background: #3a4a9e; }
+.link-btn-folder { background: var(--gold); color: var(--white); }
+.link-btn-folder:hover { background: var(--gold-l); }
+.link-btn-disabled { background: #ddd; color: #999; pointer-events: none; }
+
+/* Toast */
+.toast {
+  position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+  background: var(--ink); color: var(--white);
+  padding: 10px 20px; border-radius: 24px;
+  font-size: 13px; font-weight: 500; z-index: 200;
+  opacity: 0; transition: opacity 0.3s; pointer-events: none;
+}
+.toast.show { opacity: 1; }
+
+@media (max-width: 640px) {
+  .hotel-row { grid-template-columns: 1fr; gap: 6px; }
+  .link-btns { margin-top: 6px; }
+  .stats-bar { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-name">Royal Orchid</div>
+      <div class="logo-sub">Pan India Dashboard</div>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" onclick="copyAllLinks()">📋 Copy All Links</button>
+      <button class="header-btn" onclick="downloadCSV()">📥 Download CSV</button>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar" id="stats-bar"></div>
+<div class="search-wrap">
+  <input type="text" class="search-input" id="search" placeholder="Search hotel, city, state, or manager…" oninput="renderHotels()">
+</div>
+<div class="filter-tabs" id="filter-tabs"></div>
+<div class="container" id="hotel-list"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const GITHUB_BASE = "https://suchethannayakroyalorchidcom-star.github.io/royal-orchid-site-updates";
+
+const HOTELS = [
+  {idx:0,hotel:"Regenta Inn",city:"Tezpur",state:"Assam",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Kunal Banerjee",ppt_url:"https://workdrive.zoho.in/file/er25u3a5b502414b443aeb601aa1d27aafc84",folder_url:"https://workdrive.zoho.in/folder/bwvtofc29477bc8af4b23805e604dec2fd0ab",region:"East"},
+  {idx:1,hotel:"Regenta Place",city:"Bhadohi",state:"Uttar Pradesh",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Kunal Banerjee",ppt_url:"https://workdrive.zoho.in/file/er25u332464c9e4e9482482372f7817b22c54",folder_url:"https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32",region:"North"},
+  {idx:2,hotel:"Regenta",city:"Jamshedpur",state:"Jharkhand",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Kunal Banerjee",ppt_url:"https://workdrive.zoho.in/file/er25u468370f7b138489680394721fbccea96",folder_url:"https://workdrive.zoho.in/folder/j753909043b6a685749ce8cfbb0425035e9d3",region:"East"},
+  {idx:3,hotel:"Regenta Z",city:"Patna",state:"Bihar",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Kunal Banerjee",ppt_url:"https://workdrive.zoho.in/file/er25u19c3f709e0ea4c22be7f9f707461ac5b",folder_url:"https://workdrive.zoho.in/folder/j7539c71e8e87961d47c08114c62cef140cc6",region:"East"},
+  {idx:4,hotel:"Regenta",city:"Lucknow",state:"Uttar Pradesh",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Kunal Banerjee",ppt_url:"https://workdrive.zoho.in/file/er25u0188f6a4d335498e988d640eaae0c033",folder_url:"",region:"North"},
+  {idx:5,hotel:"Regenta",city:"Varanasi",state:"Uttar Pradesh",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Kunal Banerjee",ppt_url:"https://workdrive.zoho.in/file/er25ub43287a7167c4f94a44f5e3d3b0a4d69",folder_url:"",region:"North"},
+  {idx:6,hotel:"Regenta",city:"Nepal",state:"Nepal",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Kunal Banerjee",ppt_url:"https://workdrive.zoho.in/file/er25u31e8e5543c8948a597a2797d3f4b161b",folder_url:"",region:"North"},
+  {idx:7,hotel:"Regenta Place",city:"Rishikesh",state:"Uttarakhand",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Deepak Chauhan",ppt_url:"https://workdrive.zoho.in/file/er25ub35557d8615842a692e16f847784cedd",folder_url:"https://workdrive.zoho.in/folder/j75395bb79100d3664933ac80ff8d62ea4d32",region:"North"},
+  {idx:8,hotel:"Regenta",city:"Gurgaon Sector 70",state:"Haryana",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Deepak Chauhan",ppt_url:"https://workdrive.zoho.in/file/er25u8ce9a991079149dc914c8c94b49df6c3",folder_url:"",region:"North"},
+  {idx:9,hotel:"Regenta",city:"Mussoorie",state:"Uttarakhand",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Deepak Chauhan",ppt_url:"https://workdrive.zoho.in/file/er25ub08f1ed118f842edbde54c031e7665c8",folder_url:"",region:"North"},
+  {idx:10,hotel:"Regenta Place",city:"Mall Road, Mussoorie",state:"Uttarakhand",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Deepak Chauhan",ppt_url:"https://workdrive.zoho.in/file/er25u9a5594d503e244d9ae31564d440c0119",folder_url:"",region:"North"},
+  {idx:11,hotel:"Regenta Place",city:"Jim Corbett",state:"Uttarakhand",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Deepak Chauhan",ppt_url:"https://workdrive.zoho.in/file/er25u253d8e502aa74aa99b9847aa274948b6",folder_url:"",region:"North"},
+  {idx:12,hotel:"Regenta Place",city:"Vrindavan",state:"Uttar Pradesh",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Deepak Chauhan",ppt_url:"https://workdrive.zoho.in/file/er25uacce3441faac4341babdacfa39168407",folder_url:"",region:"North"},
+  {idx:13,hotel:"Hotel",city:"ORAI",state:"Uttar Pradesh",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Deepak Chauhan",ppt_url:"",folder_url:"",region:"North"},
+  {idx:14,hotel:"Regenta Resort",city:"Pushkar",state:"Rajasthan",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Sanjay Narula",ppt_url:"https://workdrive.zoho.in/file/er25u845e339abbd74ee5a96cd44769a62a92",folder_url:"",region:"North"},
+  {idx:15,hotel:"Crestoria",city:"Bhopal",state:"Madhya Pradesh",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Sanjay Narula",ppt_url:"https://workdrive.zoho.in/file/er25ubfbb796d83004b569f758b364d2d6e2e",folder_url:"",region:"Central"},
+  {idx:16,hotel:"Regenta Resort",city:"Chittorgarh",state:"Rajasthan",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Sanjay Narula",ppt_url:"https://workdrive.zoho.in/file/er25u082f5876475d477aac899a404146071d",folder_url:"",region:"North"},
+  {idx:17,hotel:"Regenta",city:"Bhopal Airport",state:"Madhya Pradesh",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Sanjay Narula",ppt_url:"https://workdrive.zoho.in/file/er25udbdc35145d8445d28c5d066bd9d1ea07",folder_url:"",region:"Central"},
+  {idx:18,hotel:"Regenta",city:"Jabalpur",state:"Madhya Pradesh",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Sanjay Narula",ppt_url:"https://workdrive.zoho.in/file/er25uf65128491e6b44799ae471e15b8dc745",folder_url:"",region:"Central"},
+  {idx:19,hotel:"Regenta",city:"Gwalior",state:"Madhya Pradesh",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Sanjay Narula",ppt_url:"https://workdrive.zoho.in/file/er25u2673cbc737c4424f80b8d86607b96b0c",folder_url:"",region:"Central"},
+  {idx:20,hotel:"Crestoria",city:"Jodhpur",state:"Rajasthan",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Sanjay Narula",ppt_url:"https://workdrive.zoho.in/file/er25u6ed9e4a60d6943bca77c39fe97aaa844",folder_url:"",region:"North"},
+  {idx:21,hotel:"Regenta Place",city:"Udaipur",state:"Rajasthan",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Sanjay Narula",ppt_url:"https://workdrive.zoho.in/file/er25u1e7ccb466ddb4754baee3d1c841e911f",folder_url:"",region:"North"},
+  {idx:22,hotel:"Regenta Suites & Residences",city:"Jaipur",state:"Rajasthan",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Sanjay Narula",ppt_url:"https://workdrive.zoho.in/file/er25u5fc81dc7c17745c2ab8a5d26aa8d1996",folder_url:"",region:"North"},
+  {idx:23,hotel:"Regenta Place",city:"Baddi",state:"Himachal Pradesh",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Gagandeep Singh",ppt_url:"https://workdrive.zoho.in/file/er25u85aee428af164e37b4c7ebf687d4d50e",folder_url:"",region:"North"},
+  {idx:24,hotel:"Regenta Z",city:"Ambala",state:"Haryana",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Gagandeep Singh",ppt_url:"https://workdrive.zoho.in/file/er25u11a96d5f90a44e6fa92bf2b177ffccb4",folder_url:"",region:"North"},
+  {idx:25,hotel:"Regenta",city:"Ambala",state:"Haryana",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Gagandeep Singh",ppt_url:"https://workdrive.zoho.in/file/er25u5ba6820636aa49cab99222061a2a9976",folder_url:"",region:"North"},
+  {idx:26,hotel:"Regenta Z",city:"Amritsar",state:"Punjab",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Gagandeep Singh",ppt_url:"https://workdrive.zoho.in/file/er25u815c4cda3347472b87c0d7603dfa6bf0",folder_url:"",region:"North"},
+  {idx:27,hotel:"Regenta Place",city:"Bathinda",state:"Punjab",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Gagandeep Singh",ppt_url:"https://workdrive.zoho.in/file/er25u710a082f5c054f8a883fc740b661ff81",folder_url:"",region:"North"},
+  {idx:28,hotel:"Regenta",city:"Amritsar",state:"Punjab",manager:"Mr.Charanjeeth Singh",cluster:"Mr.Gagandeep Singh",ppt_url:"https://workdrive.zoho.in/file/er25u577146068b924e4a880cdfa0ab08762d",folder_url:"",region:"North"},
+  {idx:29,hotel:"Regenta Inn",city:"Dhule",state:"Maharashtra",manager:"Mr.Jagan",cluster:"Mr.Vikas Passi",ppt_url:"https://workdrive.zoho.in/file/er25u35260ed496214007bdd55eee42e6d037",folder_url:"",region:"West"},
+  {idx:30,hotel:"Regenta",city:"Nanded",state:"Maharashtra",manager:"Mr.Jagan",cluster:"Mr.Vikas Passi",ppt_url:"https://workdrive.zoho.in/file/er25u272c0ee5794149debd250d3eb2b96417",folder_url:"",region:"West"},
+  {idx:31,hotel:"Regenta Resort",city:"Mulshi, Pune",state:"Maharashtra",manager:"Mr.Jagan",cluster:"Mr.Vikas Passi",ppt_url:"https://workdrive.zoho.in/file/er25uc27864b1c53848a6821d0b68449d9a54",folder_url:"",region:"West"},
+  {idx:32,hotel:"Regenta Resort",city:"Panchgani",state:"Maharashtra",manager:"Mr.Jagan",cluster:"Mr.Vikas Passi",ppt_url:"https://workdrive.zoho.in/file/er25u66ea84f23e734de9ac08f9d4414c5ee2",folder_url:"",region:"West"},
+  {idx:33,hotel:"Regenta Z",city:"Mahabaleshwar",state:"Maharashtra",manager:"Mr.Jagan",cluster:"Mr.Vikas Passi",ppt_url:"https://workdrive.zoho.in/file/er25ubbc292e58c264d21b19b49504c6cb224",folder_url:"",region:"West"},
+  {idx:34,hotel:"Regenta Residences",city:"Trimbakeshwar",state:"Maharashtra",manager:"Mr.Jagan",cluster:"Mr.Vikas Passi",ppt_url:"https://workdrive.zoho.in/file/er25ua676816fbf974d219e2a3fb3fcc107eb",folder_url:"",region:"West"},
+  {idx:35,hotel:"Regenta Place",city:"Omerga",state:"Maharashtra",manager:"Mr.Jagan",cluster:"Mr.Vikas Passi",ppt_url:"https://workdrive.zoho.in/file/er25u5b205bee058f44e7b4a7e23ead29d0f3",folder_url:"",region:"West"},
+  {idx:36,hotel:"Regenta Resort",city:"Gir",state:"Gujarat",manager:"Mr.Jagan",cluster:"Mr.Rakesh Dogra",ppt_url:"https://workdrive.zoho.in/file/er25u33105b7c98c74a8abd41edcfdf097119",folder_url:"",region:"West"},
+  {idx:37,hotel:"Regenta",city:"Rajkot",state:"Gujarat",manager:"Mr.Jagan",cluster:"Mr.Rakesh Dogra",ppt_url:"https://workdrive.zoho.in/file/er25u0c91ac0298c24e48ba58fa56e5ea30c0",folder_url:"",region:"West"},
+  {idx:38,hotel:"Regenta Resort",city:"Bhavnagar",state:"Gujarat",manager:"Mr.Jagan",cluster:"Mr.Rakesh Dogra",ppt_url:"https://workdrive.zoho.in/file/er25u6448da4d4beb4ba98c75e4ea4ef308ed",folder_url:"",region:"West"},
+  {idx:39,hotel:"Regenta INN ANJAR",city:"Anjar",state:"Gujarat",manager:"Mr.Jagan",cluster:"Mr.Rakesh Dogra",ppt_url:"https://workdrive.zoho.in/file/er25u236d09787b2f4e838385e64e5423cd81",folder_url:"",region:"West"},
+  {idx:40,hotel:"Regenta Place",city:"Rajkot- Greenland Chowkdi",state:"Gujarat",manager:"Mr.Jagan",cluster:"Mr.Rakesh Dogra",ppt_url:"https://workdrive.zoho.in/file/er25u105c7706f72345fab8b9b2814ab327a4",folder_url:"",region:"West"},
+  {idx:41,hotel:"Regenta",city:"Mundra",state:"Gujarat",manager:"Mr.Jagan",cluster:"Mr.Rakesh Dogra",ppt_url:"https://workdrive.zoho.in/file/er25u18cb86ae8ede4e25a95294eaa19f1901",folder_url:"",region:"West"},
+  {idx:42,hotel:"Regenta Resort",city:"Saputara",state:"Gujarat",manager:"Mr.Jagan",cluster:"Mr.Rakesh Dogra",ppt_url:"https://workdrive.zoho.in/file/er25u0e01cfff7dd546eca26d443f2499dfda",folder_url:"",region:"West"},
+  {idx:43,hotel:"Regenta",city:"Tirupati",state:"Andhra Pradesh",manager:"Mr.Raja",cluster:"Mr.Saravanan Dhanabalu",ppt_url:"https://workdrive.zoho.in/file/er25u18d1e0b140d841dd837242b042c97153",folder_url:"",region:"South"},
+  {idx:44,hotel:"Regenta Z",city:"Vijayawada",state:"Andhra Pradesh",manager:"Mr.Raja",cluster:"Mr.Saravanan Dhanabalu",ppt_url:"https://workdrive.zoho.in/file/er25u56f4e34df9ad43778b89dffd898e0722",folder_url:"",region:"South"},
+  {idx:45,hotel:"Regenta Resort",city:"Kushal Nagar, Coorg",state:"Karnataka",manager:"Mr.Raja",cluster:"Mr.Saravanan Dhanabalu",ppt_url:"https://workdrive.zoho.in/file/er25u37f25854b81b4dd9850d7e51163e1480",folder_url:"",region:"South"},
+  {idx:46,hotel:"Regenta Z",city:"Kondapur, Gachibowli",state:"Hyderabad",manager:"Mr.Raja",cluster:"Mr.Saravanan Dhanabalu",ppt_url:"https://workdrive.zoho.in/file/er25uefdb23edebbb44b1930e82d6de42d425",folder_url:"",region:"South"},
+  {idx:47,hotel:"Regenta",city:"Dodamarg",state:"Goa",manager:"Mr.Raja",cluster:"Mr.Shiwam Verma",ppt_url:"https://workdrive.zoho.in/file/er25uac9860cdb9b24a2d9db0b29373a7c662",folder_url:"",region:"West"},
+  {idx:48,hotel:"Crestoria",city:"Fenicia",state:"Goa",manager:"Mr.Raja",cluster:"Mr.Shiwam Verma",ppt_url:"https://workdrive.zoho.in/file/er25ucf9df87cc211469597e305d1503d8aad",folder_url:"",region:"West"},
+  {idx:49,hotel:"Regenta Baga Resort",city:"Baga Resort",state:"Goa",manager:"Mr.Raja",cluster:"Mr.Shiwam Verma",ppt_url:"https://workdrive.zoho.in/file/er25u4f22c022d75e4d0ea23a5c841e8af548",folder_url:"",region:"West"},
+  {idx:50,hotel:"Shack Project",city:"Goa",state:"Goa",manager:"Mr.Raja",cluster:"Expansion Projects",ppt_url:"https://workdrive.zoho.in/file/er25ub9789efccbd245af8f30670b63dfca82",folder_url:"",region:"West"},
+  {idx:51,hotel:"Royal Orchid Galaxy & Spa",city:"Beach Resort Goa",state:"Goa",manager:"Mr.Raja",cluster:"Expansion Projects",ppt_url:"https://workdrive.zoho.in/file/er25ub6630ef2f61b4bee84a085e2784dcd6b",folder_url:"",region:"West"},
+];
+
+const REGION_ORDER = ["North","East","Central","West","South"];
+const REGION_EMOJI = {North:"🏔️",East:"🌅",Central:"🏛️",West:"🌊",South:"🌴"};
+let activeManager = "All";
+
+function getFormUrl(idx) { return `${GITHUB_BASE}/hotel.html?hotel=${idx}`; }
+
+function renderStats(filtered) {
+  const regions = {};
+  filtered.forEach(h => { regions[h.region] = (regions[h.region]||0) + 1; });
+  const managers = {};
+  filtered.forEach(h => { managers[h.manager] = (managers[h.manager]||0) + 1; });
+
+  let html = `<div class="stat-card"><div class="stat-num">${filtered.length}</div><div class="stat-label">Total Hotels</div></div>`;
+  REGION_ORDER.forEach(r => {
+    if (regions[r]) {
+      html += `<div class="stat-card"><div class="stat-num">${regions[r]}</div><div class="stat-label">${REGION_EMOJI[r]} ${r}</div></div>`;
+    }
+  });
+  document.getElementById("stats-bar").innerHTML = html;
+}
+
+function renderFilters() {
+  const managers = ["All", ...new Set(HOTELS.map(h => h.manager))];
+  document.getElementById("filter-tabs").innerHTML = managers.map(m =>
+    `<button class="filter-tab ${m===activeManager?'active':''}" onclick="activeManager='${m}';renderHotels()">${m === 'All' ? '🏨 All' : m}</button>`
+  ).join("");
+}
+
+function renderHotels() {
+  const q = document.getElementById("search").value.toLowerCase();
+  let filtered = HOTELS.filter(h => {
+    if (activeManager !== "All" && h.manager !== activeManager) return false;
+    if (!q) return true;
+    return [h.hotel, h.city, h.state, h.manager, h.cluster].some(v => v.toLowerCase().includes(q));
+  });
+
+  renderStats(filtered);
+  renderFilters();
+
+  const grouped = {};
+  filtered.forEach(h => {
+    if (!grouped[h.region]) grouped[h.region] = [];
+    grouped[h.region].push(h);
+  });
+
+  let html = "";
+  REGION_ORDER.forEach(region => {
+    const hotels = grouped[region];
+    if (!hotels || !hotels.length) return;
+    html += `<div class="region-group">
+      <div class="region-header">
+        <div class="region-name">${REGION_EMOJI[region]} ${region} India</div>
+        <div class="region-count">${hotels.length}</div>
+      </div>`;
+    hotels.forEach(h => {
+      const formUrl = getFormUrl(h.idx);
+      html += `<div class="hotel-row">
+        <div class="hotel-name-col">
+          <div class="hotel-name-text">${h.hotel}</div>
+          <div class="hotel-manager">${h.cluster}</div>
+        </div>
+        <div class="hotel-city-text">${h.city}</div>
+        <div class="hotel-state-text">${h.state}</div>
+        <div class="link-btns">
+          <a href="${formUrl}" target="_blank" class="link-btn link-btn-form">📋 Form</a>
+          <a href="${h.ppt_url || '#'}" target="_blank" class="link-btn ${h.ppt_url ? 'link-btn-ppt' : 'link-btn-disabled'}">📊 PPT</a>
+          ${h.folder_url ? `<a href="${h.folder_url}" target="_blank" class="link-btn link-btn-folder">📁</a>` : ''}
+        </div>
+      </div>`;
+    });
+    html += `</div>`;
+  });
+
+  document.getElementById("hotel-list").innerHTML = html || '<div style="text-align:center;padding:40px;color:#7A6A5A">No hotels found</div>';
+}
+
+function copyAllLinks() {
+  const lines = ["Hotel\tCity\tState\tManager\tForm Link\tPPT Link"];
+  HOTELS.forEach(h => {
+    lines.push(`${h.hotel}\t${h.city}\t${h.state}\t${h.manager}\t${getFormUrl(h.idx)}\t${h.ppt_url || ""}`);
+  });
+  navigator.clipboard.writeText(lines.join("\n")).then(() => showToast("✓ All links copied — paste into Excel"));
+}
+
+function downloadCSV() {
+  const rows = [["Hotel","City","State","Manager","Cluster Head","Form Link","PPT Link","Folder Link"]];
+  HOTELS.forEach(h => {
+    rows.push([h.hotel, h.city, h.state, h.manager, h.cluster, getFormUrl(h.idx), h.ppt_url||"", h.folder_url||""]);
+  });
+  const csv = rows.map(r => r.map(c => `"${c.replace(/"/g,'""')}"`).join(",")).join("\n");
+  const blob = new Blob(["\uFEFF" + csv], {type:"text/csv;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "Royal_Orchid_Pan_India_Links.csv";
+  a.click();
+  showToast("✓ CSV downloaded");
+}
+
+function showToast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  setTimeout(() => el.classList.remove("show"), 3000);
+}
+
+// Init
+renderHotels();
+</script>
+</body>
+</html>

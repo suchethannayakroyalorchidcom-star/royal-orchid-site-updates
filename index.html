@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ── Reset & Base ─────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 
@@ -25,7 +24,6 @@ html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
   --muted:   #7A6A5A;
   --border:  #DDD0C0;
   --shadow:  0 2px 16px rgba(107,23,41,0.08);
-  --shadow-l:0 1px 4px rgba(107,23,41,0.06);
   --radius:  14px;
   --font-h:  'Cormorant Garamond', serif;
   --font-b:  'DM Sans', sans-serif;
@@ -39,7 +37,7 @@ body {
   padding-bottom: 120px;
 }
 
-/* ── Header ───────────────────────────────────────────── */
+/* ── Header */
 .header {
   background: var(--burg-d);
   padding: 20px 20px 16px;
@@ -94,10 +92,10 @@ body {
   50% { opacity: 0.5; transform: scale(0.8); }
 }
 
-/* ── Container ────────────────────────────────────────── */
+/* ── Container */
 .container { max-width: 480px; margin: 0 auto; padding: 20px 16px 0; }
 
-/* ── Section Card ─────────────────────────────────────── */
+/* ── Section Card */
 .card {
   background: var(--white);
   border-radius: var(--radius);
@@ -106,7 +104,6 @@ body {
   margin-bottom: 14px;
   border: 1px solid var(--cream-d);
 }
-
 .section-label {
   display: flex;
   align-items: center;
@@ -133,10 +130,9 @@ body {
   letter-spacing: 0.2px;
 }
 
-/* ── Fields ───────────────────────────────────────────── */
+/* ── Fields */
 .field { margin-bottom: 14px; }
 .field:last-child { margin-bottom: 0; }
-
 label {
   display: block;
   font-size: 12px;
@@ -175,71 +171,48 @@ select:focus, input:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(200,150,44,0.12);
   background: var(--white);
 }
-select:disabled, input:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
+select:disabled, input:disabled { opacity: 0.6; cursor: not-allowed; }
 textarea { resize: none; min-height: 100px; line-height: 1.5; }
 
-/* City auto-fill */
-.city-display {
-  font-size: 15px;
-  color: var(--muted);
-  padding: 12px 14px;
-  background: var(--cream-d);
-  border-radius: 10px;
-  border: 1.5px solid var(--border);
-  min-height: 46px;
-  font-style: italic;
-}
-
-/* ── Completion Slider ────────────────────────────────── */
-.slider-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+/* ── Completion Slider */
+.slider-row { display: flex; align-items: center; gap: 12px; }
 .slider-row input[type="range"] {
-  flex: 1;
-  height: 6px;
-  border-radius: 3px;
-  background: var(--cream-d);
-  border: none;
-  outline: none;
-  padding: 0;
-  cursor: pointer;
-  -webkit-appearance: none;
+  flex: 1; height: 6px; border-radius: 3px;
+  background: var(--cream-d); border: none; outline: none; padding: 0;
+  cursor: pointer; -webkit-appearance: none;
 }
 .slider-row input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 22px; height: 22px;
-  border-radius: 50%;
+  width: 22px; height: 22px; border-radius: 50%;
   background: var(--burg);
   border: 3px solid var(--white);
   box-shadow: 0 2px 6px rgba(107,23,41,0.3);
   cursor: pointer;
 }
-.slider-row input[type="range"]::-webkit-slider-runnable-track {
-  height: 6px;
-  border-radius: 3px;
-}
-.pct-input {
-  width: 68px !important;
-  text-align: center;
-  font-weight: 600;
-  font-size: 16px !important;
-}
-.pct-symbol {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--burg);
-  flex-shrink: 0;
-}
+.pct-input { width: 68px !important; text-align: center; font-weight: 600; font-size: 16px !important; }
+.pct-symbol { font-size: 15px; font-weight: 600; color: var(--burg); flex-shrink: 0; }
 
-/* ── Date Row ─────────────────────────────────────────── */
+/* ── Date Row */
 .date-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
-/* ── File Upload ──────────────────────────────────────── */
+/* ── Hotel Info Row */
+.hotel-info-row {
+  display: flex; gap: 8px; align-items: center;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(107,23,41,0.06), rgba(200,150,44,0.06));
+  border-radius: 10px;
+  border: 1px solid rgba(200,150,44,0.2);
+  margin-top: 6px;
+}
+.hotel-info-name { font-size: 14px; font-weight: 600; color: var(--burg); }
+.hotel-info-city { font-size: 12px; color: var(--muted); }
+.hotel-badge {
+  margin-left: auto; font-size: 11px; font-weight: 600;
+  background: var(--burg); color: var(--white);
+  padding: 3px 8px; border-radius: 6px;
+}
+
+/* ── File Upload */
 .upload-box {
   border: 2px dashed var(--border);
   border-radius: 12px;
@@ -258,13 +231,70 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
   position: absolute; inset: 0;
   opacity: 0; cursor: pointer;
   width: 100%; height: 100%;
-  background: transparent;
-  border: none;
-  padding: 0;
+  background: transparent; border: none; padding: 0;
 }
 .upload-icon { font-size: 28px; margin-bottom: 6px; }
 .upload-label { font-size: 13px; font-weight: 500; color: var(--muted); }
 .upload-hint { font-size: 11px; color: #B0A090; margin-top: 3px; }
+
+/* ── Dual Media Buttons */
+.media-btn-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.media-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 10px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  background: var(--cream);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-b);
+}
+.media-btn:hover {
+  border-color: var(--gold);
+  background: rgba(200,150,44,0.06);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(200,150,44,0.12);
+}
+.media-btn:active { transform: scale(0.97); }
+.media-btn .media-btn-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+.media-btn .media-btn-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--burg);
+  letter-spacing: 0.3px;
+}
+.media-btn .media-btn-hint {
+  font-size: 10px;
+  color: var(--muted);
+}
+.media-btn input[type="file"] {
+  position: absolute; inset: 0;
+  opacity: 0; cursor: pointer;
+  width: 100%; height: 100%;
+  background: transparent; border: none; padding: 0;
+}
+.media-btn-camera {
+  border-color: rgba(107,23,41,0.25);
+  background: linear-gradient(135deg, rgba(107,23,41,0.04), rgba(200,150,44,0.04));
+}
+.media-btn-camera:hover {
+  border-color: var(--burg);
+  background: linear-gradient(135deg, rgba(107,23,41,0.08), rgba(200,150,44,0.08));
+}
 
 /* Preview grid */
 .preview-grid {
@@ -274,44 +304,28 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
   margin-top: 10px;
 }
 .preview-item {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  aspect-ratio: 1;
-  background: var(--cream-d);
+  position: relative; border-radius: 8px; overflow: hidden;
+  aspect-ratio: 1; background: var(--cream-d);
 }
-.preview-item img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
+.preview-item img { width: 100%; height: 100%; object-fit: cover; }
 .preview-item .remove-btn {
-  position: absolute;
-  top: 4px; right: 4px;
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 12px;
-  border: none;
-  cursor: pointer;
+  position: absolute; top: 4px; right: 4px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(0,0,0,0.6); color: white;
+  font-size: 12px; border: none; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
 }
 .preview-item .progress-overlay {
   position: absolute; inset: 0;
   background: rgba(107,23,41,0.7);
   display: flex; align-items: center; justify-content: center;
-  color: white;
-  font-size: 12px;
-  font-weight: 600;
+  color: white; font-size: 12px; font-weight: 600;
 }
-.video-preview, .render-preview {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  background: var(--cream);
-  border-radius: 8px;
-  margin-top: 8px;
+
+.video-preview {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; background: var(--cream);
+  border-radius: 8px; margin-top: 8px;
   border: 1px solid var(--border);
 }
 .video-preview .file-icon { font-size: 20px; flex-shrink: 0; }
@@ -322,31 +336,34 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
 }
 .video-preview .file-status { font-size: 11px; color: var(--muted); }
 .video-preview .remove-btn {
-  background: none; border: none;
-  font-size: 16px; cursor: pointer;
-  color: var(--muted); padding: 4px;
+  background: none; border: none; font-size: 16px;
+  cursor: pointer; color: var(--muted); padding: 4px;
 }
 
-/* Upload progress bar */
-.upload-progress {
-  height: 3px;
-  background: var(--cream-d);
-  border-radius: 2px;
-  overflow: hidden;
-  margin-top: 6px;
+/* ── Rendering preview */
+.render-file-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; background: var(--cream);
+  border-radius: 8px; margin-top: 6px;
+  border: 1px solid var(--border);
 }
-.upload-progress-bar {
-  height: 100%;
-  background: var(--gold);
-  border-radius: 2px;
-  transition: width 0.3s;
-  width: 0%;
+.render-file-item .file-icon { font-size: 18px; flex-shrink: 0; }
+.render-file-item .file-info { flex: 1; min-width: 0; }
+.render-file-item .file-name {
+  font-size: 12px; font-weight: 500;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.render-file-item .file-size { font-size: 10px; color: var(--muted); }
+.render-file-item .remove-btn {
+  background: none; border: none; font-size: 14px;
+  cursor: pointer; color: var(--muted); padding: 4px;
 }
 
-/* ── Bottom Action Bar ────────────────────────────────── */
+.divider { height: 1px; background: var(--cream-d); margin: 12px 0; }
+
+/* ── Bottom Action Bar */
 .action-bar {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
+  position: fixed; bottom: 0; left: 0; right: 0;
   background: var(--white);
   border-top: 1px solid var(--cream-d);
   padding: 14px 16px;
@@ -354,61 +371,37 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
   box-shadow: 0 -4px 20px rgba(107,23,41,0.08);
 }
 .action-bar-inner {
-  max-width: 480px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  max-width: 480px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 8px;
 }
 .btn-submit {
-  width: 100%;
-  padding: 16px;
-  background: var(--burg);
-  color: var(--white);
-  border: none;
-  border-radius: 12px;
-  font-family: var(--font-b);
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  cursor: pointer;
+  width: 100%; padding: 16px;
+  background: var(--burg); color: var(--white);
+  border: none; border-radius: 12px;
+  font-family: var(--font-b); font-size: 16px; font-weight: 600;
+  letter-spacing: 0.3px; cursor: pointer;
   transition: background 0.2s, transform 0.1s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
 }
 .btn-submit:hover { background: var(--burg-l); }
 .btn-submit:active { transform: scale(0.98); }
 .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-.draft-status {
-  text-align: center;
-  font-size: 11px;
-  color: var(--muted);
-}
+.draft-status { text-align: center; font-size: 11px; color: var(--muted); }
 
-/* ── Loading Screen ───────────────────────────────────── */
+/* ── Loading Screen */
 #loading-screen {
   position: fixed; inset: 0;
   background: var(--burg-d);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  gap: 16px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  z-index: 999; gap: 16px;
 }
 .loading-logo {
-  font-family: var(--font-h);
-  font-size: 32px;
-  color: var(--gold-l);
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-family: var(--font-h); font-size: 32px;
+  color: var(--gold-l); font-weight: 600; letter-spacing: 1px;
 }
 .loading-sub {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
   color: rgba(255,255,255,0.4);
 }
 .loading-spinner {
@@ -421,81 +414,51 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── Success Screen ───────────────────────────────────── */
+/* ── Success Screen */
 #success-screen {
-  display: none;
-  position: fixed; inset: 0;
-  background: var(--cream);
-  z-index: 500;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-  text-align: center;
-  gap: 16px;
+  display: none; position: fixed; inset: 0;
+  background: var(--cream); z-index: 500;
+  flex-direction: column; align-items: center;
+  justify-content: center; padding: 32px;
+  text-align: center; gap: 16px;
 }
 #success-screen.show { display: flex; }
 .success-icon { font-size: 64px; }
 .success-title {
-  font-family: var(--font-h);
-  font-size: 28px;
-  font-weight: 600;
-  color: var(--burg-d);
+  font-family: var(--font-h); font-size: 28px;
+  font-weight: 600; color: var(--burg-d);
 }
 .success-sub { font-size: 15px; color: var(--muted); max-width: 280px; line-height: 1.5; }
-.btn-ppt {
-  padding: 14px 28px;
-  background: var(--gold);
-  color: var(--white);
-  border: none;
-  border-radius: 12px;
-  font-family: var(--font-b);
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 8px;
+.btn-ppt-link {
+  padding: 14px 28px; background: var(--gold); color: var(--white);
+  border: none; border-radius: 12px; font-family: var(--font-b);
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  text-decoration: none; display: inline-flex;
+  align-items: center; gap: 8px; margin-top: 8px;
 }
 .btn-another {
-  padding: 12px 24px;
-  background: transparent;
-  color: var(--burg);
-  border: 2px solid var(--burg);
-  border-radius: 12px;
-  font-family: var(--font-b);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
+  padding: 12px 24px; background: transparent;
+  color: var(--burg); border: 2px solid var(--burg);
+  border-radius: 12px; font-family: var(--font-b);
+  font-size: 14px; font-weight: 600; cursor: pointer;
 }
 
-/* ── Toast ────────────────────────────────────────────── */
+/* ── Toast */
 .toast {
-  position: fixed;
-  bottom: 100px; left: 50%; transform: translateX(-50%);
-  background: var(--ink);
-  color: var(--white);
-  padding: 10px 18px;
-  border-radius: 24px;
-  font-size: 13px;
-  font-weight: 500;
-  z-index: 200;
-  opacity: 0;
-  transition: opacity 0.3s;
-  white-space: nowrap;
-  pointer-events: none;
+  position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);
+  background: var(--ink); color: var(--white);
+  padding: 10px 18px; border-radius: 24px;
+  font-size: 13px; font-weight: 500; z-index: 200;
+  opacity: 0; transition: opacity 0.3s;
+  white-space: nowrap; pointer-events: none;
 }
 .toast.show { opacity: 1; }
 
-/* ── Draft Restore Banner ─────────────────────────────── */
+/* ── Draft Restore Banner */
 .restore-banner {
   background: linear-gradient(135deg, var(--burg) 0%, var(--burg-l) 100%);
-  color: var(--white);
-  padding: 14px 16px;
-  border-radius: var(--radius);
-  margin-bottom: 14px;
+  color: var(--white); padding: 14px 16px;
+  border-radius: var(--radius); margin-bottom: 14px;
   display: none;
 }
 .restore-banner.show { display: block; }
@@ -503,44 +466,12 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
 .restore-sub { font-size: 12px; opacity: 0.8; }
 .restore-actions { display: flex; gap: 8px; margin-top: 10px; }
 .restore-btn {
-  padding: 7px 14px;
-  border-radius: 8px;
-  font-family: var(--font-b);
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
+  padding: 7px 14px; border-radius: 8px;
+  font-family: var(--font-b); font-size: 12px;
+  font-weight: 600; cursor: pointer; border: none;
 }
 .restore-yes { background: var(--white); color: var(--burg); }
 .restore-no  { background: rgba(255,255,255,0.2); color: var(--white); }
-
-/* ── Misc ─────────────────────────────────────────────── */
-.divider {
-  height: 1px;
-  background: var(--cream-d);
-  margin: 12px 0;
-}
-.hotel-info-row {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  padding: 10px 14px;
-  background: linear-gradient(135deg, rgba(107,23,41,0.06), rgba(200,150,44,0.06));
-  border-radius: 10px;
-  border: 1px solid rgba(200,150,44,0.2);
-  margin-top: 6px;
-}
-.hotel-info-name { font-size: 14px; font-weight: 600; color: var(--burg); }
-.hotel-info-city { font-size: 12px; color: var(--muted); }
-.hotel-badge {
-  margin-left: auto;
-  font-size: 11px;
-  font-weight: 600;
-  background: var(--burg);
-  color: var(--white);
-  padding: 3px 8px;
-  border-radius: 6px;
-}
 </style>
 </head>
 <body>
@@ -569,7 +500,7 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
   </div>
 </header>
 
-<!-- Main Content -->
+<!-- Main Form -->
 <div class="container" id="main-form" style="display:none">
 
   <!-- Draft Restore Banner -->
@@ -691,70 +622,73 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
       <div class="section-num">5</div>
       <div class="section-title">Photos &amp; Media</div>
     </div>
-
-    <!-- Site Photos -->
     <div class="field">
       <label>Site Photos</label>
-      <div class="upload-box" id="photos-box"
-           ondragover="e.preventDefault();this.classList.add('drag-over')"
-           ondragleave="this.classList.remove('drag-over')"
-           ondrop="handleDrop(event,'photos')">
-        <input type="file" id="photos-input" multiple accept="image/*"
-               onchange="handleFiles('photos')">
-        <div class="upload-icon">📸</div>
-        <div class="upload-label">Tap to add site photos</div>
-        <div class="upload-hint">JPG, PNG · multiple allowed</div>
+      <div class="media-btn-row">
+        <div class="media-btn media-btn-camera">
+          <input type="file" id="photos-camera" accept="image/*" capture="environment" multiple
+                 onchange="handlePhotosFrom(this)">
+          <div class="media-btn-icon">📷</div>
+          <div class="media-btn-label">Take Photo</div>
+          <div class="media-btn-hint">Open camera</div>
+        </div>
+        <div class="media-btn">
+          <input type="file" id="photos-gallery" accept="image/*" multiple
+                 onchange="handlePhotosFrom(this)">
+          <div class="media-btn-icon">🖼️</div>
+          <div class="media-btn-label">Upload Photos</div>
+          <div class="media-btn-hint">Choose from gallery</div>
+        </div>
       </div>
       <div class="preview-grid" id="photos-preview"></div>
     </div>
-
     <div class="divider"></div>
-
-    <!-- Rendered Image -->
-    <div class="field">
-      <label>Architectural Render / Design Image</label>
-      <div class="upload-box" id="render-box"
-           ondragover="e.preventDefault();this.classList.add('drag-over')"
-           ondragleave="this.classList.remove('drag-over')"
-           ondrop="handleDrop(event,'render')">
-        <input type="file" id="render-input" accept="image/*,application/pdf"
-               onchange="handleFiles('render')">
-        <div class="upload-icon">🏛️</div>
-        <div class="upload-label">Tap to add rendered image</div>
-        <div class="upload-hint">JPG, PNG, PDF · 1 file</div>
-      </div>
-      <div id="render-preview"></div>
-      <div class="upload-progress" id="render-progress" style="display:none">
-        <div class="upload-progress-bar" id="render-progress-bar"></div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- Site Video -->
     <div class="field">
       <label>Site Video</label>
-      <div class="upload-box" id="video-box"
-           ondragover="e.preventDefault();this.classList.add('drag-over')"
-           ondragleave="this.classList.remove('drag-over')"
-           ondrop="handleDrop(event,'video')">
-        <input type="file" id="video-input" accept="video/*"
-               onchange="handleFiles('video')">
-        <div class="upload-icon">🎬</div>
-        <div class="upload-label">Tap to add site video</div>
-        <div class="upload-hint">MP4, MOV · 1 file</div>
+      <div class="media-btn-row">
+        <div class="media-btn media-btn-camera">
+          <input type="file" id="video-camera" accept="video/*" capture="environment"
+                 onchange="handleVideoFrom(this)">
+          <div class="media-btn-icon">🎥</div>
+          <div class="media-btn-label">Record Video</div>
+          <div class="media-btn-hint">Open camera</div>
+        </div>
+        <div class="media-btn">
+          <input type="file" id="video-gallery" accept="video/*"
+                 onchange="handleVideoFrom(this)">
+          <div class="media-btn-icon">📁</div>
+          <div class="media-btn-label">Upload Video</div>
+          <div class="media-btn-hint">Choose file · max 50 MB</div>
+        </div>
       </div>
       <div id="video-preview"></div>
-      <div class="upload-progress" id="video-progress" style="display:none">
-        <div class="upload-progress-bar" id="video-progress-bar"></div>
-      </div>
     </div>
   </div>
 
-  <!-- Section 6: Remarks -->
+  <!-- Section 6: Renderings -->
   <div class="card">
     <div class="section-label">
       <div class="section-num">6</div>
+      <div class="section-title">Renderings &amp; Documents</div>
+    </div>
+    <div class="field">
+      <label>Upload Renderings / Drawings / Plans</label>
+      <div class="upload-box" id="renders-box">
+        <input type="file" id="renders-input" multiple accept="image/*,.pdf,.dwg"
+               onchange="handleRenderings()">
+        <div class="upload-icon">📐</div>
+        <div class="upload-label">Tap to add renderings or documents</div>
+        <div class="upload-hint">Images, PDF, DWG · multiple allowed</div>
+      </div>
+      <div class="preview-grid" id="renders-preview-images"></div>
+      <div id="renders-preview-files"></div>
+    </div>
+  </div>
+
+  <!-- Section 7: Remarks -->
+  <div class="card">
+    <div class="section-label">
+      <div class="section-num">7</div>
       <div class="section-title">Remarks &amp; Issues</div>
     </div>
     <div class="field">
@@ -762,19 +696,14 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
       <textarea id="remarks" placeholder="Describe current progress, any issues, delays, or next steps…"></textarea>
     </div>
   </div>
-
-</div><!-- /container -->
+</div>
 
 <!-- Success Screen -->
 <div id="success-screen">
   <div class="success-icon">✅</div>
   <div class="success-title">Update Submitted!</div>
-  <div class="success-sub" id="success-sub">
-    Your site update for has been saved successfully.
-  </div>
-  <a id="ppt-link" class="btn-ppt" href="#" target="_blank">
-    📊 View Presentation
-  </a>
+  <div class="success-sub" id="success-sub">Your site update has been saved successfully.</div>
+  <a id="ppt-link" class="btn-ppt-link" href="#" target="_blank" style="display:none">📊 View Presentation</a>
   <button class="btn-another" onclick="resetForm()">Submit Another Area</button>
 </div>
 
@@ -789,178 +718,149 @@ textarea { resize: none; min-height: 100px; line-height: 1.5; }
 </div>
 
 <script>
-// ════════════════════════════════════════════════════════════
-//  CONFIG — Replace WORKER_URL after deploying Cloudflare Worker
-// ════════════════════════════════════════════════════════════
+// ════════════════════════════════════════════════
+//  CONFIG
+// ════════════════════════════════════════════════
 const WORKER_URL = "https://royal-orchid-site-updates.suchethannayakroyalorchid-com.workers.dev";
-// Example: "https://royal-orchid-site-updates.suchethan.workers.dev"
+const MAX_IMG_DIM = 1280;
+const IMG_QUALITY = 0.7;
 
-// ── Area → Spaces mapping ────────────────────────────────
+// ── Area → Spaces mapping
 const SPACES = {
   "External & Facade": [
-    "Main Entrance / Porch",
-    "Building Exterior",
-    "Parking Area",
-    "Garden / Landscaping",
-    "Driveway",
-    "Boundary Wall",
-    "Signage & Branding",
+    "Main Entrance / Porch","Building Exterior","Parking Area",
+    "Garden / Landscaping","Driveway","Boundary Wall","Signage & Branding"
   ],
   "Public Areas": [
-    "Lobby",
-    "Reception / Front Desk",
-    "Waiting Lounge",
-    "Corridors (Ground Floor)",
-    "Corridors (Upper Floors)",
-    "Elevators",
-    "Staircase",
-    "Public Restrooms",
-    "Luggage Area",
+    "Lobby","Reception / Front Desk","Waiting Lounge",
+    "Corridors (Ground Floor)","Corridors (Upper Floors)",
+    "Elevators","Staircase","Public Restrooms","Luggage Area"
   ],
   "Guest Rooms & Suites": [
-    "Standard Room",
-    "Deluxe Room",
-    "Premium Room",
-    "Junior Suite",
-    "Suite",
-    "Bathroom / Toilet",
-    "Balcony / Terrace",
+    "Standard Room","Deluxe Room","Premium Room",
+    "Junior Suite","Suite","Bathroom / Toilet","Balcony / Terrace"
   ],
   "F&B Support": [
-    "Restaurant (All Day Dining)",
-    "Bar & Lounge",
-    "Banquet Hall",
-    "Pre-Function Area",
-    "Kitchen",
-    "Room Service Area",
-    "Staff Cafeteria",
+    "Restaurant (All Day Dining)","Bar & Lounge","Banquet Hall",
+    "Pre-Function Area","Kitchen","Room Service Area","Staff Cafeteria"
   ],
   "Wellness & Recreation": [
-    "Swimming Pool",
-    "Pool Deck",
-    "Gym / Fitness Center",
-    "Spa Reception",
-    "Spa Treatment Rooms",
-    "Steam & Sauna",
-    "Kids Play Area",
+    "Swimming Pool","Pool Deck","Gym / Fitness Center",
+    "Spa Reception","Spa Treatment Rooms","Steam & Sauna","Kids Play Area"
   ],
   "Back of House": [
-    "Laundry",
-    "Housekeeping Store",
-    "Staff Locker Room",
-    "General Storage",
-    "Loading Bay",
-    "Linen Room",
+    "Laundry","Housekeeping Store","Staff Locker Room",
+    "General Storage","Loading Bay","Linen Room"
   ],
   "Administrative": [
-    "Front Office",
-    "General Manager Office",
-    "HR Room",
-    "Meeting / Training Room",
-    "Finance Office",
+    "Front Office","General Manager Office","HR Room",
+    "Meeting / Training Room","Finance Office"
   ],
   "Service & Technical": [
-    "Main Electrical Room",
-    "Sub-Electrical Panels",
-    "Plumbing / Water Treatment",
-    "HVAC / Chiller Plant",
-    "Generator Room",
-    "Fire Safety Systems",
-    "CCTV / Security Room",
+    "Main Electrical Room","Sub-Electrical Panels",
+    "Plumbing / Water Treatment","HVAC / Chiller Plant",
+    "Generator Room","Fire Safety Systems","CCTV / Security Room"
   ],
 };
 
-// ── All 52 hotels — read directly from Pan_India_Dashboard.xlsx ──────
-// Re-run sync_excel_to_zoho.py and update this list if hotels change.
-// Dropdown shows "Hotel Name — City" to distinguish duplicate names.
+// ── All 52 hotels
 const HOTELS_DATA = [
-  {name:"Regenta Inn",                  city:"Tezpur",                    state:"Assam"},
-  {name:"Regenta Place",                city:"Bhadohi",                   state:"Uttar Pradesh"},
-  {name:"Regenta",                      city:"Jamshedpur",                state:"Jharkhand"},
-  {name:"Regenta Z",                    city:"Patna",                     state:"Bihar"},
-  {name:"Regenta",                      city:"Lucknow",                   state:"Uttar Pradesh"},
-  {name:"Regenta",                      city:"Varanasi",                  state:"Uttar Pradesh"},
-  {name:"Regenta",                      city:"Nepal",                     state:"Nepal"},
-  {name:"Regenta Place",                city:"Rishikesh",                 state:"Uttarakhand"},
-  {name:"Regenta",                      city:"Gurgaon Sector 70",         state:"Haryana"},
-  {name:"Regenta",                      city:"Mussoorie",                 state:"Uttarakhand"},
-  {name:"Regenta Place",                city:"Mall Road, Mussoorie",      state:"Uttarakhand"},
-  {name:"Regenta place",                city:"Jim corbett",               state:"Uttarakhand"},
-  {name:"Regenta Place",                city:"Vrindavan",                 state:"Uttar Pradesh"},
-  {name:"Hotel",                        city:"ORAI",                      state:"Uttar Pradesh"},
-  {name:"Regenta Resort",               city:"Pushkar",                   state:"Rajasthan"},
-  {name:"Crestoria",                    city:"Bhopal",                    state:"Madhya Pradesh"},
-  {name:"Regenta Resort",               city:"Chittorgarh",               state:"Rajasthan"},
-  {name:"Regenta",                      city:"Bhopal Airport",            state:"Madhya Pradesh"},
-  {name:"Regenta",                      city:"Jabalpur",                  state:"Madhya Pradesh"},
-  {name:"Regenta",                      city:"Gwalior",                   state:"Madhya Pradesh"},
-  {name:"Crestoria",                    city:"Jodhpur",                   state:"Rajasthan"},
-  {name:"Regenta Place",                city:"Udaipur",                   state:"Rajasthan"},
-  {name:"Regenta Suites & Residences",  city:"Jaipur",                    state:"Rajasthan"},
-  {name:"Regenta Place",                city:"Baddi",                     state:"Himachal Pradesh"},
-  {name:"Regenta Z",                    city:"Ambala",                    state:"Haryana"},
-  {name:"Regenta",                      city:"Ambala",                    state:"Haryana"},
-  {name:"Regenta Z",                    city:"Amritsar",                  state:"Punjab"},
-  {name:"Regenta Place",                city:"Bathinda",                  state:"Punjab"},
-  {name:"Regenta",                      city:"Amritsar",                  state:"Punjab"},
-  {name:"Regenta Inn",                  city:"Dhule",                     state:"Maharashtra"},
-  {name:"Regenta",                      city:"Nanded",                    state:"Maharashtra"},
-  {name:"Regenta Resort",               city:"Mulshi, Pune",              state:"Maharashtra"},
-  {name:"Regenta Resort",               city:"Panchgani",                 state:"Maharashtra"},
-  {name:"Regenta Z",                    city:"Mahabaleshwar",             state:"Maharashtra"},
-  {name:"Regenta Residences",           city:"Trimbakeshwar",             state:"Maharashtra"},
-  {name:"Regenta Place",                city:"Omerga",                    state:"Maharashtra"},
-  {name:"Regenta Resort",               city:"Gir",                       state:"Gujarat"},
-  {name:"Regenta",                      city:"Rajkot",                    state:"Gujarat"},
-  {name:"Regenta Resort",               city:"Bhavnagar",                 state:"Gujarat"},
-  {name:"Regenta INN ANJAR",            city:"Anjar",                     state:"Gujarat"},
-  {name:"Regenta Place",                city:"Rajkot- Greenland Chowkdi", state:"Gujarat"},
-  {name:"Regenta",                      city:"Mundra",                    state:"Gujarat"},
-  {name:"Regenta Resort",               city:"Saputara",                  state:"Gujarat"},
-  {name:"Regenta",                      city:"Tirupati",                  state:"Andhra Pradesh"},
-  {name:"Regenta Z",                    city:"Vijayawada",                state:"Andhra Pradesh"},
-  {name:"Regenta Resort",               city:"Kushal Nagar, Coorg",       state:"Karnataka"},
-  {name:"Regenta Z",                    city:"Kondapur, Gachibowli",      state:"Hyderabad"},
-  {name:"Regenta",                      city:"Dodamarg",                  state:"Goa"},
-  {name:"Crestoria",                    city:"Fenicia",                   state:"Goa"},
-  {name:"Regenta Baga Resort",          city:"Baga Resort",               state:"Goa"},
-  {name:"Shack Project",                city:"Goa",                       state:"Goa"},
-  {name:"Royal orchid Galaxy & Spa",    city:"Beach Resort Goa",          state:"Goa"},
+  {name:"Regenta Inn",city:"Tezpur",state:"Assam"},
+  {name:"Regenta Place",city:"Bhadohi",state:"Uttar Pradesh"},
+  {name:"Regenta",city:"Jamshedpur",state:"Jharkhand"},
+  {name:"Regenta Z",city:"Patna",state:"Bihar"},
+  {name:"Regenta",city:"Lucknow",state:"Uttar Pradesh"},
+  {name:"Regenta",city:"Varanasi",state:"Uttar Pradesh"},
+  {name:"Regenta",city:"Nepal",state:"Nepal"},
+  {name:"Regenta Place",city:"Rishikesh",state:"Uttarakhand"},
+  {name:"Regenta",city:"Gurgaon Sector 70",state:"Haryana"},
+  {name:"Regenta",city:"Mussoorie",state:"Uttarakhand"},
+  {name:"Regenta Place",city:"Mall Road, Mussoorie",state:"Uttarakhand"},
+  {name:"Regenta place",city:"Jim corbett",state:"Uttarakhand"},
+  {name:"Regenta Place",city:"Vrindavan",state:"Uttar Pradesh"},
+  {name:"Hotel",city:"ORAI",state:"Uttar Pradesh"},
+  {name:"Regenta Resort",city:"Pushkar",state:"Rajasthan"},
+  {name:"Crestoria",city:"Bhopal",state:"Madhya Pradesh"},
+  {name:"Regenta Resort",city:"Chittorgarh",state:"Rajasthan"},
+  {name:"Regenta",city:"Bhopal Airport",state:"Madhya Pradesh"},
+  {name:"Regenta",city:"Jabalpur",state:"Madhya Pradesh"},
+  {name:"Regenta",city:"Gwalior",state:"Madhya Pradesh"},
+  {name:"Crestoria",city:"Jodhpur",state:"Rajasthan"},
+  {name:"Regenta Place",city:"Udaipur",state:"Rajasthan"},
+  {name:"Regenta Suites & Residences",city:"Jaipur",state:"Rajasthan"},
+  {name:"Regenta Place",city:"Baddi",state:"Himachal Pradesh"},
+  {name:"Regenta Z",city:"Ambala",state:"Haryana"},
+  {name:"Regenta",city:"Ambala",state:"Haryana"},
+  {name:"Regenta Z",city:"Amritsar",state:"Punjab"},
+  {name:"Regenta Place",city:"Bathinda",state:"Punjab"},
+  {name:"Regenta",city:"Amritsar",state:"Punjab"},
+  {name:"Regenta Inn",city:"Dhule",state:"Maharashtra"},
+  {name:"Regenta",city:"Nanded",state:"Maharashtra"},
+  {name:"Regenta Resort",city:"Mulshi, Pune",state:"Maharashtra"},
+  {name:"Regenta Resort",city:"Panchgani",state:"Maharashtra"},
+  {name:"Regenta Z",city:"Mahabaleshwar",state:"Maharashtra"},
+  {name:"Regenta Residences",city:"Trimbakeshwar",state:"Maharashtra"},
+  {name:"Regenta Place",city:"Omerga",state:"Maharashtra"},
+  {name:"Regenta Resort",city:"Gir",state:"Gujarat"},
+  {name:"Regenta",city:"Rajkot",state:"Gujarat"},
+  {name:"Regenta Resort",city:"Bhavnagar",state:"Gujarat"},
+  {name:"Regenta INN ANJAR",city:"Anjar",state:"Gujarat"},
+  {name:"Regenta Place",city:"Rajkot- Greenland Chowkdi",state:"Gujarat"},
+  {name:"Regenta",city:"Mundra",state:"Gujarat"},
+  {name:"Regenta Resort",city:"Saputara",state:"Gujarat"},
+  {name:"Regenta",city:"Tirupati",state:"Andhra Pradesh"},
+  {name:"Regenta Z",city:"Vijayawada",state:"Andhra Pradesh"},
+  {name:"Regenta Resort",city:"Kushal Nagar, Coorg",state:"Karnataka"},
+  {name:"Regenta Z",city:"Kondapur, Gachibowli",state:"Hyderabad"},
+  {name:"Regenta",city:"Dodamarg",state:"Goa"},
+  {name:"Crestoria",city:"Fenicia",state:"Goa"},
+  {name:"Regenta Baga Resort",city:"Baga Resort",state:"Goa"},
+  {name:"Shack Project",city:"Goa",state:"Goa"},
+  {name:"Royal orchid Galaxy & Spa",city:"Beach Resort Goa",state:"Goa"},
 ];
 
-// ── State ────────────────────────────────────────────────
-let hotels        = HOTELS_DATA;  // pre-loaded, no API needed
-let currentHotel  = null;
-let pendingDraft  = null;     // draft fetched from cloud, awaiting user decision
-let uploadedFiles = {
-  photos: [],   // [ {file, url} ]
-  render: null, // {file, url}
-  video:  null, // {file, url}
-};
+// ── State
+let hotels = HOTELS_DATA;
+let currentHotel = null;
+let pendingDraft = null;
+let selectedPhotos = [];
+let selectedVideo = null;
 let saveTimer = null;
-let isSaving  = false;
 
-// ── Init ─────────────────────────────────────────────────
+// ── Init
 window.addEventListener("DOMContentLoaded", () => {
-  // Hotels are hardcoded — form loads instantly, no API needed
   populateHotelDropdown();
   document.getElementById("loading-screen").style.display = "none";
-  document.getElementById("main-form").style.display      = "block";
-  document.getElementById("action-bar").style.display     = "block";
+  document.getElementById("main-form").style.display = "block";
+  document.getElementById("action-bar").style.display = "block";
+
+  // Pre-select hotel from URL param
+  const urlHotel = new URLSearchParams(location.search).get("hotel");
+  if (urlHotel) {
+    const idx = hotels.findIndex(h => 
+      `${h.name} — ${h.city}`.toLowerCase() === urlHotel.toLowerCase() ||
+      h.name.toLowerCase() === urlHotel.toLowerCase() ||
+      String(hotels.indexOf(h)) === urlHotel
+    );
+    if (idx >= 0) {
+      document.getElementById("hotel-select").value = idx;
+      onHotelChange();
+    }
+  }
 });
 
 function populateHotelDropdown() {
   const sel = document.getElementById("hotel-select");
   hotels.forEach((h, i) => {
-    const opt  = document.createElement("option");
-    opt.value  = i;   // use index as value to handle duplicate names
-    opt.text   = `${h.name}  —  ${h.city}`;
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.text = `${h.name}  —  ${h.city}`;
     sel.appendChild(opt);
   });
 }
 
-// ── Hotel Selection ──────────────────────────────────────
-async function onHotelChange() {
+// ── Hotel Selection
+function onHotelChange() {
   const idx = document.getElementById("hotel-select").value;
   if (idx === "") {
     currentHotel = null;
@@ -970,37 +870,13 @@ async function onHotelChange() {
   currentHotel = hotels[parseInt(idx)];
   document.getElementById("hotel-info-name").textContent = currentHotel.name;
   document.getElementById("hotel-info-city").textContent = `${currentHotel.city}  ·  ${currentHotel.state}`;
-  document.getElementById("hotel-info").style.display   = "flex";
-
-  // Check for cloud draft — use name+city as unique key
-  const draftKey = `${currentHotel.name} — ${currentHotel.city}`;
-  showSaveBadge("Checking draft…", false);
-  try {
-    const res  = await fetch(`${WORKER_URL}/draft?hotel=${encodeURIComponent(draftKey)}`);
-    const data = await res.json();
-    hideSaveBadge();
-    if (data.draft && Object.keys(data.draft).length > 0) {
-      pendingDraft = data.draft;
-      const area    = data.draft.area   || "";
-      const space   = data.draft.space  || "";
-      const lastSub = data.draft._ts
-        ? "Last saved " + timeSince(data.draft._ts)
-        : "Unsaved work found";
-      document.getElementById("restore-sub").textContent =
-        `${area} → ${space} · ${lastSub}`;
-      document.getElementById("restore-banner").classList.add("show");
-    }
-  } catch {
-    hideSaveBadge();
-  }
-
-  scheduleDraftSave();
+  document.getElementById("hotel-info").style.display = "flex";
 }
 
-// ── Area → Space Cascade ─────────────────────────────────
+// ── Area → Space Cascade
 function onAreaChange() {
   const area = document.getElementById("area-select").value;
-  const sel  = document.getElementById("space-select");
+  const sel = document.getElementById("space-select");
   sel.innerHTML = '<option value="">— Select Space —</option>';
   if (area && SPACES[area]) {
     SPACES[area].forEach(s => {
@@ -1009,85 +885,175 @@ function onAreaChange() {
       sel.appendChild(o);
     });
   }
-  scheduleDraftSave();
 }
 
-// ── Completion % sync ────────────────────────────────────
+// ── Completion % sync
 function syncPct(source) {
   const slider = document.getElementById("pct-slider");
-  const input  = document.getElementById("pct-input");
+  const input = document.getElementById("pct-input");
   if (source === "slider") {
     input.value = slider.value;
   } else {
     let v = parseInt(input.value, 10);
     if (isNaN(v)) v = 0;
     v = Math.max(0, Math.min(100, v));
-    input.value  = v;
+    input.value = v;
     slider.value = v;
   }
-  scheduleDraftSave();
 }
 
-// ── Draft Save/Restore ───────────────────────────────────
-function collectFormData() {
-  return {
-    area:           document.getElementById("area-select").value,
-    space:          document.getElementById("space-select").value,
-    stage:          document.getElementById("stage-select").value,
-    completion_pct: document.getElementById("pct-input").value,
-    start_date:     document.getElementById("start-date").value,
-    end_date:       document.getElementById("end-date").value,
-    remarks:        document.getElementById("remarks").value,
-    rendered_image_url: uploadedFiles.render?.url || "",
-    site_photos_urls:   uploadedFiles.photos.map(f => f.url).join(", "),
-    site_video_url:     uploadedFiles.video?.url  || "",
-    _ts: new Date().toISOString(),
-  };
+// ── Image Resize
+function resizeImage(file) {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        let w = img.width, h = img.height;
+        if (w > MAX_IMG_DIM || h > MAX_IMG_DIM) {
+          if (w > h) { h = Math.round(h * MAX_IMG_DIM / w); w = MAX_IMG_DIM; }
+          else { w = Math.round(w * MAX_IMG_DIM / h); h = MAX_IMG_DIM; }
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        canvas.toBlob((blob) => {
+          resolve(new File([blob], file.name.replace(/\.[^.]+$/, '.jpg'), { type: 'image/jpeg' }));
+        }, 'image/jpeg', IMG_QUALITY);
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
 }
 
-function scheduleDraftSave() {
-  clearTimeout(saveTimer);
-  saveTimer = setTimeout(pushDraft, 1500);
+// ── Photo Handling
+function renderPhotoPreviews() {
+  const grid = document.getElementById("photos-preview");
+  grid.innerHTML = "";
+  selectedPhotos.forEach((file, i) => {
+    const div = document.createElement("div");
+    div.className = "preview-item";
+    const img = document.createElement("img");
+    img.src = URL.createObjectURL(file);
+    const btn = document.createElement("button");
+    btn.className = "remove-btn"; btn.textContent = "×"; btn.type = "button";
+    btn.onclick = () => { selectedPhotos.splice(i, 1); renderPhotoPreviews(); };
+    div.append(img, btn);
+    grid.appendChild(div);
+  });
 }
 
-async function pushDraft() {
-  if (!currentHotel) return;
-  const hotel = `${currentHotel.name} — ${currentHotel.city}`;  // unique key
-  showSaveBadge("Saving…", false);
-  isSaving = true;
-  try {
-    await fetch(`${WORKER_URL}/draft`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ hotel, draft: collectFormData() }),
-    });
-    showSaveBadge("Saved", true);
-    setTimeout(hideSaveBadge, 2500);
-  } catch {
-    hideSaveBadge();
+async function handlePhotosFrom(inputEl) {
+  const files = Array.from(inputEl.files);
+  for (const f of files) {
+    const resized = await resizeImage(f);
+    selectedPhotos.push(resized);
   }
-  isSaving = false;
+  renderPhotoPreviews();
+  inputEl.value = "";
+}
+
+// ── Video Handling
+function handleVideoFrom(inputEl) {
+  const file = inputEl.files[0];
+  if (!file) return;
+  if (file.size > 50 * 1024 * 1024) {
+    showToast("Video must be under 50 MB");
+    inputEl.value = "";
+    return;
+  }
+  selectedVideo = file;
+  document.getElementById("video-preview").innerHTML = `
+    <div class="video-preview">
+      <div class="file-icon">🎬</div>
+      <div class="file-info">
+        <div class="file-name">${file.name}</div>
+        <div class="file-status">Ready to upload · ${(file.size/1024/1024).toFixed(1)} MB</div>
+      </div>
+      <button class="remove-btn" type="button" onclick="removeVideo()">×</button>
+    </div>`;
+  inputEl.value = "";
+}
+
+function removeVideo() {
+  selectedVideo = null;
+  document.getElementById("video-preview").innerHTML = "";
+}
+
+// ── Rendering Handling
+let selectedRenderings = [];
+
+function handleRenderings() {
+  const input = document.getElementById("renders-input");
+  const files = Array.from(input.files);
+  for (const f of files) {
+    selectedRenderings.push(f);
+  }
+  renderRenderingPreviews();
+  input.value = "";
+}
+
+function renderRenderingPreviews() {
+  const imgGrid = document.getElementById("renders-preview-images");
+  const fileList = document.getElementById("renders-preview-files");
+  imgGrid.innerHTML = "";
+  fileList.innerHTML = "";
+  
+  selectedRenderings.forEach((file, i) => {
+    if (file.type.startsWith('image/')) {
+      const div = document.createElement("div");
+      div.className = "preview-item";
+      const img = document.createElement("img");
+      img.src = URL.createObjectURL(file);
+      const btn = document.createElement("button");
+      btn.className = "remove-btn"; btn.textContent = "×"; btn.type = "button";
+      btn.onclick = () => { selectedRenderings.splice(i, 1); renderRenderingPreviews(); };
+      div.append(img, btn);
+      imgGrid.appendChild(div);
+    } else {
+      const sizeKB = (file.size / 1024).toFixed(0);
+      const icon = file.name.endsWith('.pdf') ? '📄' : '📐';
+      fileList.innerHTML += `
+        <div class="render-file-item">
+          <div class="file-icon">${icon}</div>
+          <div class="file-info">
+            <div class="file-name">${file.name}</div>
+            <div class="file-size">${sizeKB} KB</div>
+          </div>
+          <button class="remove-btn" type="button" onclick="selectedRenderings.splice(${i},1);renderRenderingPreviews()">×</button>
+        </div>`;
+    }
+  });
+}
+
+// ── Draft save/restore (local storage)
+function saveDraftLocal() {
+  if (!currentHotel) return;
+  const key = `draft_${currentHotel.name}_${currentHotel.city}`;
+  const data = {
+    area: document.getElementById("area-select").value,
+    space: document.getElementById("space-select").value,
+    stage: document.getElementById("stage-select").value,
+    pct: document.getElementById("pct-input").value,
+    startDate: document.getElementById("start-date").value,
+    endDate: document.getElementById("end-date").value,
+    remarks: document.getElementById("remarks").value,
+    _ts: new Date().toISOString()
+  };
+  try { localStorage.setItem(key, JSON.stringify(data)); } catch {}
 }
 
 function restoreDraft() {
   if (!pendingDraft) return;
   const d = pendingDraft;
   document.getElementById("restore-banner").classList.remove("show");
-
-  if (d.area) {
-    document.getElementById("area-select").value = d.area;
-    onAreaChange();
-    if (d.space) document.getElementById("space-select").value = d.space;
-  }
-  if (d.stage)          document.getElementById("stage-select").value = d.stage;
-  if (d.completion_pct !== undefined) {
-    document.getElementById("pct-input").value  = d.completion_pct;
-    document.getElementById("pct-slider").value = d.completion_pct;
-  }
-  if (d.start_date)  document.getElementById("start-date").value = d.start_date;
-  if (d.end_date)    document.getElementById("end-date").value   = d.end_date;
-  if (d.remarks)     document.getElementById("remarks").value    = d.remarks;
-
+  if (d.area) { document.getElementById("area-select").value = d.area; onAreaChange(); if (d.space) document.getElementById("space-select").value = d.space; }
+  if (d.stage) document.getElementById("stage-select").value = d.stage;
+  if (d.pct !== undefined) { document.getElementById("pct-input").value = d.pct; document.getElementById("pct-slider").value = d.pct; }
+  if (d.startDate) document.getElementById("start-date").value = d.startDate;
+  if (d.endDate) document.getElementById("end-date").value = d.endDate;
+  if (d.remarks) document.getElementById("remarks").value = d.remarks;
   pendingDraft = null;
   showToast("Draft restored ✓");
 }
@@ -1095,255 +1061,64 @@ function restoreDraft() {
 function dismissDraft() {
   document.getElementById("restore-banner").classList.remove("show");
   pendingDraft = null;
-  // Push an empty draft to clear the cloud copy
-  if (currentHotel) {
-    const key = `${currentHotel.name} — ${currentHotel.city}`;
-    fetch(`${WORKER_URL}/draft`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ hotel: key, draft: {} }),
-    }).catch(() => {});
-  }
 }
 
-// ── File Uploads ─────────────────────────────────────────
-function handleDrop(event, type) {
-  event.preventDefault();
-  document.getElementById(`${type}-box`).classList.remove("drag-over");
-  const files = Array.from(event.dataTransfer.files);
-  processFiles(type, files);
-}
-
-function handleFiles(type) {
-  const input = document.getElementById(`${type}-input`);
-  const files = Array.from(input.files);
-  processFiles(type, files);
-  input.value = ""; // reset so same file can be re-added
-}
-
-async function processFiles(type, files) {
-  const hotel = document.getElementById("hotel-select").value;
-  const area  = document.getElementById("area-select").value;
-
-  if (!hotel) { showToast("Select a hotel first"); return; }
-  if (!area  ) { showToast("Select an area first"); return; }
-
-  // Get target folder ID
-  let folderId;
-  try {
-    const r = await fetch(
-      `${WORKER_URL}/folder?hotel=${encodeURIComponent(hotel)}&area=${encodeURIComponent(area)}`
-    );
-    const d = await r.json();
-    if (!d.folder_id) throw new Error(d.error || "No folder");
-    folderId = d.folder_id;
-  } catch (e) {
-    showToast("⚠ Could not find WorkDrive folder: " + e.message);
-    return;
-  }
-
-  if (type === "photos") {
-    for (const file of files) {
-      await uploadSinglePhoto(file, folderId);
-    }
-  } else if (type === "render") {
-    await uploadRenderOrVideo("render", files[0], folderId);
-  } else if (type === "video") {
-    await uploadRenderOrVideo("video", files[0], folderId);
-  }
-
-  scheduleDraftSave();
-}
-
-async function uploadSinglePhoto(file, folderId) {
-  const idx     = uploadedFiles.photos.length;
-  const preview = document.getElementById("photos-preview");
-  const item    = document.createElement("div");
-  item.className = "preview-item";
-  item.id        = `photo-item-${idx}`;
-
-  const img    = document.createElement("img");
-  img.src      = URL.createObjectURL(file);
-  const overlay = document.createElement("div");
-  overlay.className = "progress-overlay";
-  overlay.textContent = "Uploading…";
-  item.appendChild(img);
-  item.appendChild(overlay);
-  preview.appendChild(item);
-
-  // Push placeholder
-  uploadedFiles.photos.push({ file, url: "" });
-
-  try {
-    const fd = new FormData();
-    fd.append("file", file, file.name);
-    fd.append("folder_id", folderId);
-    fd.append("filename", file.name);
-
-    const r = await fetch(`${WORKER_URL}/upload`, { method: "POST", body: fd });
-    const d = await r.json();
-    if (d.url) {
-      uploadedFiles.photos[idx].url = d.url;
-      overlay.remove();
-      // Add remove button
-      const btn    = document.createElement("button");
-      btn.className = "remove-btn";
-      btn.textContent = "×";
-      btn.onclick  = () => { item.remove(); uploadedFiles.photos[idx].url = ""; scheduleDraftSave(); };
-      item.appendChild(btn);
-    } else {
-      overlay.textContent = "✗ Failed";
-    }
-  } catch {
-    overlay.textContent = "✗ Error";
-  }
-}
-
-async function uploadRenderOrVideo(type, file, folderId) {
-  if (!file) return;
-  const previewEl   = document.getElementById(`${type}-preview`);
-  const progressEl  = document.getElementById(`${type}-progress`);
-  const progressBar = document.getElementById(`${type}-progress-bar`);
-
-  previewEl.innerHTML = `
-    <div class="video-preview">
-      <div class="file-icon">${type === "video" ? "🎬" : "🏛️"}</div>
-      <div class="file-info">
-        <div class="file-name">${file.name}</div>
-        <div class="file-status">Uploading…</div>
-      </div>
-    </div>`;
-  progressEl.style.display = "block";
-
-  // Simulate progress (actual XHR progress isn't easy via fetch)
-  let prog = 0;
-  const tick = setInterval(() => {
-    prog = Math.min(prog + 8, 90);
-    progressBar.style.width = prog + "%";
-  }, 300);
-
-  try {
-    const fd = new FormData();
-    fd.append("file", file, file.name);
-    fd.append("folder_id", folderId);
-    fd.append("filename", file.name);
-
-    const r = await fetch(`${WORKER_URL}/upload`, { method: "POST", body: fd });
-    const d = await r.json();
-    clearInterval(tick);
-    progressBar.style.width = "100%";
-
-    if (d.url) {
-      if (type === "video") uploadedFiles.video  = { file, url: d.url };
-      else                  uploadedFiles.render = { file, url: d.url };
-
-      previewEl.innerHTML = `
-        <div class="video-preview">
-          <div class="file-icon">${type === "video" ? "🎬" : "🏛️"}</div>
-          <div class="file-info">
-            <div class="file-name">${file.name}</div>
-            <div class="file-status" style="color:#2e7d32">✓ Uploaded</div>
-          </div>
-          <button class="remove-btn" onclick="removeFile('${type}')">×</button>
-        </div>`;
-      setTimeout(() => { progressEl.style.display = "none"; }, 600);
-    } else {
-      throw new Error(d.error || "Upload failed");
-    }
-  } catch (e) {
-    clearInterval(tick);
-    progressEl.style.display = "none";
-    previewEl.innerHTML = `
-      <div class="video-preview">
-        <div class="file-icon">⚠️</div>
-        <div class="file-info">
-          <div class="file-name">${file.name}</div>
-          <div class="file-status" style="color:#c62828">Upload failed — tap to retry</div>
-        </div>
-      </div>`;
-    showToast("Upload failed: " + e.message);
-  }
-}
-
-function removeFile(type) {
-  if (type === "video")  { uploadedFiles.video  = null; document.getElementById("video-preview").innerHTML  = ""; }
-  if (type === "render") { uploadedFiles.render = null; document.getElementById("render-preview").innerHTML = ""; }
-  scheduleDraftSave();
-}
-
-// ── Auto-save on all text inputs ─────────────────────────
+// Auto-save on changes
 ["area-select","space-select","stage-select","start-date","end-date","remarks"]
   .forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.addEventListener("change", scheduleDraftSave);
+    if (el) el.addEventListener("change", () => { clearTimeout(saveTimer); saveTimer = setTimeout(saveDraftLocal, 1500); });
   });
-document.getElementById("remarks").addEventListener("input", scheduleDraftSave);
+document.getElementById("remarks").addEventListener("input", () => { clearTimeout(saveTimer); saveTimer = setTimeout(saveDraftLocal, 1500); });
 
-// ── Submit ───────────────────────────────────────────────
+// ── Submit
 async function submitForm() {
-  const idx   = document.getElementById("hotel-select").value;
-  const area  = document.getElementById("area-select").value;
+  const idx = document.getElementById("hotel-select").value;
+  const area = document.getElementById("area-select").value;
   const space = document.getElementById("space-select").value;
   const stage = document.getElementById("stage-select").value;
 
-  if (idx === "")  { showToast("Please select a hotel"); return; }
-  if (!area)       { showToast("Please select an area"); return; }
-  if (!space)      { showToast("Please select a space"); return; }
-  if (!stage)      { showToast("Please select a stage"); return; }
+  if (idx === "") { showToast("Please select a hotel"); return; }
+  if (!area)      { showToast("Please select an area"); return; }
+  if (!space)     { showToast("Please select a space"); return; }
+  if (!stage)     { showToast("Please select a stage"); return; }
 
   const btn = document.getElementById("submit-btn");
   btn.disabled = true;
   btn.innerHTML = `<div style="width:18px;height:18px;border:2px solid rgba(255,255,255,0.4);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite"></div> Submitting…`;
 
   const hotelObj = currentHotel || {};
-  const hotel    = hotelObj.name || "";
-  const payload = {
-    hotel_name:         hotel,
-    city:               hotelObj.city || "",
-    area,
-    space,
-    stage:              document.getElementById("stage-select").value,
-    completion_pct:     document.getElementById("pct-input").value,
-    start_date:         document.getElementById("start-date").value,
-    end_date:           document.getElementById("end-date").value,
-    rendered_image_url: uploadedFiles.render?.url || "",
-    site_photos_urls:   uploadedFiles.photos.filter(f => f.url).map(f => f.url).join(", "),
-    site_video_url:     uploadedFiles.video?.url  || "",
-    remarks:            document.getElementById("remarks").value,
-  };
+  const hotelKey = `${hotelObj.name} — ${hotelObj.city}`;
 
   try {
-    const r = await fetch(`${WORKER_URL}/submit`, {
-      method:  "POST",
-      headers: { "Content-Type": "application/json" },
-      body:    JSON.stringify(payload),
-    });
-    const d = await r.json();
-    if (!d.submitted) throw new Error(d.error || "Submit failed");
+    const fd = new FormData();
+    fd.append("hotel", hotelObj.name || "");
+    fd.append("city", hotelObj.city || "");
+    fd.append("area", area);
+    fd.append("space", space);
+    fd.append("stage", stage);
+    fd.append("completion", document.getElementById("pct-input").value);
+    fd.append("startDate", document.getElementById("start-date").value);
+    fd.append("endDate", document.getElementById("end-date").value);
+    fd.append("remarks", document.getElementById("remarks").value);
 
-    // Fetch PPT URL
-    let pptUrl = hotelObj.ppt_url || "";
-    if (!pptUrl) {
-      try {
-        const pr = await fetch(`${WORKER_URL}/ppt?hotel=${encodeURIComponent(hotel)}`);
-        const pd = await pr.json();
-        pptUrl = pd.ppt_url || "";
-      } catch {}
-    }
+    for (const photo of selectedPhotos) fd.append("photos", photo);
+    if (selectedVideo) fd.append("video", selectedVideo);
+    for (const render of selectedRenderings) fd.append("renderings", render);
+
+    const r = await fetch(`${WORKER_URL}/submit`, { method: "POST", body: fd });
+    const d = await r.json();
+
+    if (!d.success) throw new Error(d.error || "Submit failed");
+
+    // Clear local draft
+    try { localStorage.removeItem(`draft_${hotelObj.name}_${hotelObj.city}`); } catch {}
 
     document.getElementById("success-sub").textContent =
-      `Site update for ${hotel} — ${area} / ${space} has been saved.`;
-
-    const pptLink = document.getElementById("ppt-link");
-    if (pptUrl) {
-      pptLink.href    = pptUrl;
-      pptLink.style.display = "inline-flex";
-    } else {
-      pptLink.style.display = "none";
-    }
-
-    document.getElementById("action-bar").style.display  = "none";
+      `Site update for ${hotelObj.name} — ${area} / ${space} has been saved.`;
+    document.getElementById("action-bar").style.display = "none";
     document.getElementById("success-screen").classList.add("show");
+
   } catch (e) {
     btn.disabled = false;
     btn.innerHTML = "Submit Site Update ↑";
@@ -1354,51 +1129,32 @@ async function submitForm() {
 function resetForm() {
   document.getElementById("success-screen").classList.remove("show");
   document.getElementById("action-bar").style.display = "block";
-
-  // Keep hotel selected; reset rest
-  document.getElementById("area-select").value  = "";
+  document.getElementById("area-select").value = "";
   document.getElementById("space-select").innerHTML = '<option value="">— Select Area first —</option>';
   document.getElementById("stage-select").value = "";
-  document.getElementById("pct-input").value    = "0";
-  document.getElementById("pct-slider").value   = "0";
-  document.getElementById("start-date").value   = "";
-  document.getElementById("end-date").value     = "";
-  document.getElementById("remarks").value      = "";
+  document.getElementById("pct-input").value = "0";
+  document.getElementById("pct-slider").value = "0";
+  document.getElementById("start-date").value = "";
+  document.getElementById("end-date").value = "";
+  document.getElementById("remarks").value = "";
   document.getElementById("photos-preview").innerHTML = "";
-  document.getElementById("render-preview").innerHTML = "";
-  document.getElementById("video-preview").innerHTML  = "";
-  uploadedFiles = { photos: [], render: null, video: null };
-
+  document.getElementById("video-preview").innerHTML = "";
+  document.getElementById("renders-preview-images").innerHTML = "";
+  document.getElementById("renders-preview-files").innerHTML = "";
+  selectedPhotos = [];
+  selectedVideo = null;
+  selectedRenderings = [];
   document.getElementById("submit-btn").disabled = false;
   document.getElementById("submit-btn").innerHTML = "Submit Site Update ↑";
   window.scrollTo(0, 0);
 }
 
-// ── UI Helpers ───────────────────────────────────────────
-function showSaveBadge(text, saved) {
-  const badge = document.getElementById("save-badge");
-  const dot   = document.getElementById("save-dot");
-  const label = document.getElementById("save-text");
-  label.textContent = text;
-  dot.className = "save-dot" + (saved ? " saved" : "");
-  badge.classList.add("visible");
-}
-function hideSaveBadge() {
-  document.getElementById("save-badge").classList.remove("visible");
-}
-
+// ── UI Helpers
 function showToast(msg) {
   const el = document.getElementById("toast");
   el.textContent = msg;
   el.classList.add("show");
   setTimeout(() => el.classList.remove("show"), 3000);
-}
-
-function timeSince(iso) {
-  const s = Math.floor((Date.now() - new Date(iso)) / 1000);
-  if (s < 60)  return `${s}s ago`;
-  if (s < 3600) return `${Math.floor(s/60)}m ago`;
-  return `${Math.floor(s/3600)}h ago`;
 }
 </script>
 </body>
